@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체</title>
+    <link rel="stylesheet" href="./css/event.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#title a").click(function(event) {
+                if ($(this).hasClass("on")) {
+                    $(this).add("#list").removeClass("on");                    
+                } else {
+                    $(this).add("#list").addClass("on");                    
+                }
+                event.preventDefault();
+                event.stopPropagation();
+                // return false;
+            });
+            $("html").click(function() {
+                $("#title a").add("#list").removeClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="select">
+        <div id="title"><a href="#">사이트이동</a></div>
+        <ul id="list">
+            <li><a href="http://www.naver.com" target="_blank" title="새창">네이버</a></li>
+            <li><a href="http://www.daum.net" target="_blank" title="새창">다음</a></li>
+            <li><a href="http://www.nate.com" target="_blank" title="새창">네이트</a></li>
+        </ul>
+    </div>
+    <div id="con"></div>
+</body>
+</html>

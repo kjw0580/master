@@ -1,0 +1,19 @@
+/* 구글 웹폰트를 가져올때 항상 맨 위에 위치해야한다 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+*{margin:0; padding: 0;}
+#container{width:1000px; margin: 0 auto; /* border:1px solid black */}
+header{height: 80px; background-color: rgb(67, 171, 255); margin-bottom: 10px;}
+header #logo{width: 200px; float: left;}
+header h1{color:white; padding: 15px 20px; font-family: 'Nanum Pen Script', cursive; font-size:50px;}
+header nav{width: 700px; float: right;}
+nav ul{text-align: right; list-style-type: none; margin-right: 100px;}
+nav ul li{display: inline; line-height: 80px; margin:10px;}
+nav ul li a{color: rgb(255, 255, 255); text-decoration: none;}
+nav ul li a:hover{color: rgb(173, 33, 33); background-color: rgb(97, 153, 199); border-radius: 50%; padding:10px}
+
+section{float:left; border: 2px solid black; height: 600px; width:620px; margin-bottom: 10px;}
+
+aside{float:right; border: 2px solid black; height: 600px; width:320px; background-color: rgba(67, 171, 255, 0.5)}
+
+footer{clear:both; border: 2px solid black; height: 100px;}
+

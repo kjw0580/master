@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 예제</title>
+    <link rel="stylesheet" href="./css/scroll2.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    $("#up").addClass("on");
+                }else{
+                    $("#up").removeClass("on");
+                }
+            });
+
+            $("#up a").click(function(event){
+                $(window).scrollLeft(0);
+                event.preventDefault();  //처음 로딩될때 실행 막는 함수
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap"></div>
+    <div id="up">
+        <a href="#">TOP</a>
+    </div>
+</body>
+</html>

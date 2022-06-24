@@ -1,0 +1,11 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{font-size: 12px; color: #000; text-decoration: none;}
+body{background: #ddd;}
+#visual{width: 1000px; margin: 0 auto; position: relative;}
+#pic{ height: 563px; overflow: hidden;}
+#control{position: absolute; width: 100%; left: 0; bottom: 30px; text-align: center;}
+#control a{display:inline-block;background: #000; color: #fff; border-radius: 100%; 
+    padding: 5px; width: 20px; height: 20px; line-height: 20px;}
+#control a.on{background: orange;}
+#control a:hover{background: rgb(240, 218, 96);}

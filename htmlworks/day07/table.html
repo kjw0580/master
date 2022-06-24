@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        table, td{border:1px solid #ccc; border-collapse:collapse; padding:10px 20px}
+        /* tr:first-child{background-color: #0f0;} */
+        /* tr:last-child{background-color: #0f0;} */
+        /* tr:nth-child(2n){background-color: #0f0;}  2n인 경우 n=1 대입(2, 4, 6...)*/
+        /* 2n+1인 경우 n=0대입 (1, 3, 5...) */
+        tr:nth-child(2n+1){background-color: #0f0;}
+        td:nth-child(2){width: 100px;}
+    </style>
+</head>
+<body>
+    <h1>건강에 좋은 건강 식품</h1>
+    <table>
+        <tr>
+            <td>블루베리</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>귀리</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>토마토</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>시금치</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>적포도주</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>견과류</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

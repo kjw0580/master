@@ -1,0 +1,13 @@
+<script>
+    window.onload = function(){
+        alert("Hello~");
+    }
+</script>
+
+제이쿼리 (jQuery)
+<!-- <script src="jquery-3.6.0.js"></script> -->
+<script>
+    $(document).ready(function(){
+        alert("Hello~");
+    })
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each() 함수</title>
+    <script src="/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+           $("div").each(function(index, element) {
+                console.log($(this).attr("class"));   
+                console.log(index, element);
+           }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="m1">내용1</div>
+    <div class="m2">내용2</div>
+    <div class="m3">내용3</div>
+</body>
+</html>

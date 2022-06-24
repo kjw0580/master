@@ -1,0 +1,16 @@
+*{margin: 0; padding: 0;}
+
+#contents{background: url(../images/bg.jpg) no-repeat; 
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    margin:0 auto;
+    position: relative;}
+
+h1{color:white; font-size: 20px; position: absolute; right:10px; bottom:10px; 
+    visibility: hidden; transition: 1s; text-shadow: 5px 5px 5px rgb(22, 22, 22);}
+#contents:hover h1{visibility: visible; transform: rotate(360deg); position: absolute; 
+    right: 100px; bottom: 100px; font-size: 120px;}
+
+/* h2{color:white; font-size: 20px; position: absolute; top:10px; left:10px; visibility: hidden; transition: 3s}
+#contents:hover h2{visibility: visible; transform:rotateX(20px); position: absolute; top:10px; left:10px; font-size: 50px;} */

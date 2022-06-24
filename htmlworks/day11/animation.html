@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation 속성</title>
+    <style>
+        p{
+            width: 100px; height: 100px; padding: 10px; background: firebrick;
+            /* animation-name: sample; animation-duration: 4s; animation-fill-mode: forwards; */
+            /* animation-iteration-count: 3; 3번 동작 */
+            animation:sample 4s both;
+        }
+        @keyframes sample{ 0%{background: firebrick; -webkit-transform: translate(0, 0);}
+    50%{background: cornflowerblue; -webkit-transform: translate(30px, 20px);}
+    100%{background: forestgreen; -webkit-transform: translate(0, 0);}
+    }
+    </style>
+</head>
+<body>
+    <p>Animation..</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* 메뉴 스타일 */
+*{margin:0; padding:0;}
+#container{width: 800px; margin:20px auto; border:1px solid black; padding:10px 20px; border-radius: 5px;}
+#discription{width: 600px; margin:20px auto; border:1px solid black; padding:10px 20px; border-radius: 5px;}
+#receipe{width: 770px; margin:20px auto; border:1px solid black; padding:10px 20px; border-radius: 5px;}
+nav a{text-decoration: none; color:rgb(0, 0, 0);}
+/* 질/답 게시판 스타일 */
+table{border:2px solid rgb(0, 4, 255); border-collapse: collapse;width:500px; height:30px;}
+td, th{border:2px solid rgb(0, 4, 255); text-align: center;}
+/* 로그인 스타일 */
+.tbl_login{width:300px; background-color:white;}
+.tbl_login td{width:150px; height:30px;}

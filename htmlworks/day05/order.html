@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 주문서</title>
+    <style>
+        ul{list-style: none;}
+        ul li{margin:10px;}
+        label{width: 80px; }
+        #container{width:1000px; margin: 50px auto;}
+        label.a{width: 80px; float:left}
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>레드향 주문하기</h1>
+    <form ation="#" method="post">
+        <fieldset>
+            <legend>상품 선택</legend>
+                <p>주문할 상품을 선택해 주세요.</p>
+                <ul>
+                        <li><label><input type="checkbox" value="g_3">선물용 3kg</label><input type="number" min="0" max="5">개 (최대 5개)</li>
+                        <li><label><input type="checkbox" value="g_5">선물용 5kg</label><input type="number" min="0" max="3">개 (최대 3개)</li>
+                        <li><label><input type="checkbox" value="g_3">가정용 3kg</label><input type="range" min="0" max="5">개 (최대 5개)</li>
+                        <li><label><input type="checkbox" value="g_5">가정용 5kg</label><input type="range" min="0" max="3">개 (최대 3개)</li>
+                </ul>
+        </fieldset>
+        <fieldset>
+        <legend>배송 정보</legend>
+        <ul>
+            <li><label class="a" for="d-day">배송 날짜</label><input type="date" name="d-day" id="d-day"></li>
+            <li><label class="a" for="d-time">배송 시간</label><input type="time" name="d-time" id="d-time"></li>
+            <li><label class="a">이름</label><input type="text" name="name"></li>
+            <li><label class="a">배송 주소</label><input type="text" name="s"></li>
+            <li><label class="a">이메일</label><input type="text" name="email"></li>
+            <li><label class="a">연락처</label><input type="text" name="phone"></li>
+        </ul>
+
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

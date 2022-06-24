@@ -1,0 +1,6 @@
+*{margin:0; padding: 0; box-sizing:border-box;}
+#container{width:1000px; margin: 0 auto; /* border:1px solid black */}
+        header{border: 2px solid black; margin: 0 auto; height: 100px; margin-bottom: 10px;}
+        section{float:left; border: 2px solid black; height: 600px; width:620px; margin-bottom: 10px;}
+        aside{float:right; border: 2px solid black; height: 600px; width:320px; background-color: skyblue;}
+        footer{clear:both; border: 2px solid black; height: 100px;}

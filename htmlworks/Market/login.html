@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <!-- <link rel="stylesheet" href="../day02/css/board.css"> -->
+    <link rel="stylesheet" href="./css/product2.css">
+</head>
+<body>
+    <div id="container">
+    <nav>
+        <a href="./main.html">Home | </a>
+        <a href="./tangerine2.html">상품 소개 | </a>
+        <a href="./board.html">질문/답변 | </a>
+        <a href="./login.html">로그인</a>
+    </nav>
+    <div id="login">
+        <form action="loginProcess.jsp" method="post">
+            <p>
+                <label>&nbsp;아이디&nbsp;&nbsp;</label> 
+                <input type="text" name="id" size="10">
+                <!-- <textarea> 여러줄 텍스트 </textarea> -->
+            </p>
+            <p>
+                <label>비밀번호</label> 
+                <input type="password" name="password" size="10">
+            </p><br>
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+</div>
+</body>
+</html>

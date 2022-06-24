@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = 8, num2 = 5;
+        let result = 0;
+
+        //비교 연산
+        result = (num1 < num2);
+        console.log(result); //false
+
+        result = (num1 >= num2);
+        console.log(result); //false
+
+
+        // '==' 는 같다, '!=' 같지 않다.
+
+        result = (num1 == num2);
+        console.log(result); //false
+
+        result = (num1 != num2);
+        console.log(result); //false
+
+        //논리 연산(&& - 두 항이 모두 참일 때 참, 나머지는 거짓)
+        result = (num1 > num2) && (num1 == num2);
+        console.log(result); // false
+
+        // || - 두 항 중 하나이상 참이면 참이다.
+        result = (num1 > num2) || (num1 == num2);
+        console.log(result); // true
+        
+        result = !(num1 < num2);
+        console.log(result); 
+
+    </script>
+</body>
+</html>

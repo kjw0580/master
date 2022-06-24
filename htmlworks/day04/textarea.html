@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러줄 입력 text</title>
+    <style>
+        form{width: 500px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>배송업무</legend>
+            <!-- cols : 가로에 넣을 글자수, rows : 세로 글자 줄수
+                placeholder : 힌트 글 -->
+            <textarea name="memo" cols="50" rows="5" autopocus
+            placeholder="배송시 요청 사항을 적어주세요"></textarea>
+        </fieldset>
+    </form>
+</body>
+</html>

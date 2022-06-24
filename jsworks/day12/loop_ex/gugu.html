@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <script>
+        //내가한거
+        /* let dan = Number(prompt("구구단 원하는 수를 적어주세요","1~9"));
+        let abc = 0;
+        let i = 1
+
+        document.write(dan + "단<br>")
+
+        for(i = 1; i <= 9; i++){
+            abc = dan * i
+            document.write(dan + " X " + i + " = " + abc +"<br>")
+        }
+        document.write("끝") */
+
+        let dan = Number(prompt("구구단 원하는 수를 적어주세요","1~9"));
+
+        document.write(dan + "단<br>")
+
+        for(let i = 1; i <= 9; i++){
+            document.write(dan + " X " + i + " = " + (dan*i) + "<br>")
+        }
+        document.write("끝")
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인라인 레벨 요소</title>
+    <style>
+        div{width: 1000px; border: 1px solid black;}
+        .pic1{display: none;} /* 이미지 숨기면서 공간 삭제 */
+        .pic2{visibility:hidden ;} /* 이미지 숨기고 공간 유지 */
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/bear.jpg">
+        <img src="./images/cat.jpg" class="pic1">
+        <img src="./images/photo.jpg">
+    </div>
+    <div>
+        <img src="./images/bear.jpg">
+        <img src="./images/cat.jpg" class="pic2">
+        <img src="./images/photo.jpg">
+    </div>
+</body>
+</html>

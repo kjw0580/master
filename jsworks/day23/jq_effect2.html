@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/effect2.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $("#control a").click(function(){
+                let num = Number($(this).text()); //1 - eq(0, 1, 2, 3)
+                //클릭된 번호요소만 클래스가 적용되고, 다른 형제요소들은 클래스 제거
+                $(this).addClass("on").siblings().removeClass("on");
+                //div 요소 중 visible된 요소는 fadeOut() 시키고 
+                //클릭한 번호에 해당하는 요소는 fadeIn() 시킴
+                $("#pic > div").filter(":visible").fadeOut(350)
+                .end().eq(num-1).fadeIn(350)
+            })
+            // $("#control a:first").add("#pic > div:first").show();
+        })
+    </script>
+</head>
+<body>
+    <div id="visual">
+        <div id="pic">
+            <div><img src="./img/f1.jpg" alt="1"></div>
+            <div><img src="./img/f2.jpg" alt="2"></div>
+            <div><img src="./img/f3.jpg" alt="3"></div>
+            <div><img src="./img/f4.jpg" alt="4"></div>
+        </div>
+        <div id="control">
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <a href="javascript:;">4</a>
+        </div>
+    </div>
+</body>
+</html>

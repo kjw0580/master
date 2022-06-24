@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 함수</title>
+    <script>
+        function changePic(){
+            let pic = document.querySelector("#pic");
+            pic.src = "images/cup-2.png";
+        }
+    </script>
+</head>
+<body>
+    <!-- 태그의 onclick 속성으로 이벤트 구현 -->
+    <div>
+        <img src="./images/cup-1.png" onclick="changePic()" 
+             id="pic" alt="붉은색 찻잔">
+    </div>
+</body>
+</html>

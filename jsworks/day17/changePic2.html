@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 함수</title>
+    <script>
+        window.onload = function(){
+            let pic = document.getElementById("pic");
+            
+            /*pic.onclick = changePic;  //함수 호출-괄호가 없음
+            function changePic(){
+                pic.src = "images/cup-2.png";
+            }*/
+    
+            //실행 함수(toggle 방식)
+            let sw = false;  //sw변수는 상태를 저장하는 공간
+            
+            pic.onclick = function(){
+                if(sw == false){
+                    pic.src = "images/cup-2.png";
+                    sw = true;
+                }else{ //sw == true
+                    pic.src = "images/cup-1.png";
+                    sw = false;
+                }
+            }
+        }
+     </script>
+</head>
+<body>
+    <!-- 자바스크립트의 객체의 이벤트 함수로 이벤트 구현 -->
+    <div>
+        <img src="./images/cup-1.png" id="pic" alt="붉은색 찻잔">
+    </div>
+</body>
+</html>

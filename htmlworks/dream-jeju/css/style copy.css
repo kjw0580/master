@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+*{margin:0; padding:0;}
+#container{width: 100%; margin:0px auto;}
+main{width: 1000px; margin:30px auto;}
+footer{border-top: 2px solid black; width: 1000px; margin:30px auto; clear: both;}
+
+/* header 영역 */
+header{height: 80px; width: auto; background-color: green;}
+#logo{width:300px; float: left; padding:10px 30px;}
+#logo a{color:yellow; text-decoration: none; font-family: 'Nanum Pen Script', cursive; font-size: 60px;} 
+header nav{width: 800px; float: right;}
+#topMenu{list-style: none; margin-right: 50px; text-align: right;}
+#topMenu li{display: inline-block; margin:15px; padding:15px 30px;}
+#topMenu li a{color: white; text-decoration: none; }
+#topMenu li a:hover{color:rgb(90, 140, 240); background-color: white; border-radius: 20px; padding:10px}
+
+/* section 영역 */
+/* #contents{width: 1000px; margin:30px auto;} */
+#contents section div{margin: 30px 10px 100px 10px;}
+#contents section p{line-height: 2;}
+#healing img, #activity img{float: left; margin-right: 20px; border-radius: 20px;}
+#healing .detail ul li{list-style: none; margin: 10px;}
+#travel ul{list-style:square; margin: 20px auto;}
+#travel ul li{margin:10px 50px}
+
+/* footer 영역 */
+hr{margin:30px 0px 10px 0px;}
+#bottomMenu{list-style: none; margin-left: 50px;}
+#bottomMenu li{display: inline-block; margin:10px 0; border-right: 1px solid rgb(115, 115, 115); padding:0 15px}
+#bottomMenu li:last-child{border:none}
+#bottomMenu a{text-decoration: none; color: rgb(115, 115, 115);}
+
+/* 레드향 소개페이지 */
+/* #product{width: 1000px; margin:30px auto} */
+#discription{width: 800px; margin: 0 auto; border: 1px solid black; padding: 20px 40px; border-radius: 20px 20px 0 0 ; line-height: 2em;}
+#receipe{width: 800px; margin: 0 auto; border: 1px solid black; padding: 20px 40px; line-height: 2em;}
+#package{width: 800px; margin: 0 auto; border: 1px solid black; padding: 20px 40px; border-radius: 0 0 20px 20px;}
+#product div{margin:20px 0}
+#receipe ol li{margin: 10px 30px 10px 15px}
+#tbl_package{border-collapse: collapse; width: 400px;}
+#tbl_package th,#tbl_package td{border:1px solid #ccc; text-align: center; padding:10px}
+#receipe h2{margin-bottom: 10px;}
+#discription img{border-radius: 10px; margin;20px}
+#discription h1{margin-bottom: 20px;}
+/* 레드향 샐러드 영상 */
+#salad {border:1px solid black;}
+
+/* Q&N 페이지 */
+
+#tbl_board{border:1px solid rgb(0, 0, 0); border-collapse: collapse; width:800px; height:80px;}
+#tbl_board td, #tbl_board th{border:1px solid rgb(0, 0, 0); text-align: center;}
+#tbl_board thead{background-color: rgb(219, 219, 219);}
+
+/* About Me 스타일 */
+#profile{width:1000px; margin:30px auto;}
+#profile section{margin:10px 0px 100px 0px;}
+#profile section h2{color: blue;}
+/* #profile section div{margin:30px 10px;} */
+#profile ul li{margin: 16px 50px;}
+#profile #intro{height: 400px;}
+#profile #intro h1{font-size: 2em; margin-bottom: 50px;}
+#profile #intro p{line-height: 2em;}
+#profile #intro img{float: left; margin-right: 70px; border-radius: 5px;}
+#profile #intro a{text-decoration: none; color: blue;}
+#profile #intro a:hover{text-decoration: underline;}
+#profile #career ul li:nth-child(2n+1){color: red;}
+#profile #career ul li:nth-child(2n){color: rgb(80, 138, 255);}
+#profile #skill ul li a{text-decoration: none; color: blue;}
+#profile #skill ul li a:hover{text-decoration: underline;}

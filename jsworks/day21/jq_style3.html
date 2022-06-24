@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset(), position() 함수</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #outer{
+            width: 500px; height: 500px;
+            margin: 50px;
+            background: #f60;
+            position: relative;
+        }
+        #inner{
+            width: 100px; height: 100px;
+            background: #ccc;
+            position: absolute;
+            top: 50px; left: 100px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            //offset() - 브라우저기준(html)
+            //position() - 부모 기준
+            console.log($("#inner").offset().top);
+            console.log($("#inner").offset().left);
+            console.log($("#inner").position().top);
+            console.log($("#inner").position().left);
+        });
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">내용</div>
+    </div>
+</body>
+</html>

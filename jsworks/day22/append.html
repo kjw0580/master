@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삽입 관련 메서드</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#m1").prepend("<p>삽입1_1</p>"); //strong 앞
+            $("#m1").append("<p>삽입1_2</p>");  //strong 다음
+            $("#m1").before("<p>삽입1_3</p>");  //m1 앞
+            $("#m1").after("<p>삽입1_4</p>");   //m1 뒤
+            $("<p>삽입2_1</p>").prependTo("#m2");  //strong 앞
+            $("<p>삽입2_2</p>").appendTo("#m2");   //strong 다음
+            $("<p>삽입2_3</p>").insertBefore("#m2");  //m2 앞
+            $("<p>삽입2_4</p>").insertAfter("#m2");   //m2 뒤
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <strong>내용1</strong>
+    </div>
+    <div id="m2">
+        <strong>내용2</strong>
+    </div>
+</body>
+</html>

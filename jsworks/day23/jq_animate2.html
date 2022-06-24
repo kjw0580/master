@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            let w = $("#gnb ul li").width();
+            $("#gnb").append("<span></span>");
+            $("#gnb ul li").on("mouseenter focusin", function(){
+                // 0, 1, 2, 3
+                let idx = $(this).index();
+                console.log(idx)
+                //선택 요소의 하위 a 요소에 클래스 생성
+                $(this).find("a").addClass("on");
+
+                $(this).siblings().find("a").removeClass("on");
+                $("#gnb span").animate({left: idx * w }, "fast", "swing");
+            })
+        })
+    </script>
+</head>
+<body>
+    <nav id="gnb">
+        <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JQUERY</a></li>
+            <li><a href="#">JAVASCRIPT</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자의 우선 순위</title>
+    <style>
+        /* 오른쪽 방향이 우선 순위가 높다.
+        태그 선택자 -> 클래스 선택자 -> id 선택자 -> 인라인 선택자 -> !important */
+        p{color:rgb(159, 108, 117)}
+        #ctxt{color:orange}
+        p.atxt{color: blue; !important;}
+        p.atxt.btxt{color:rgb(0, 255, 106)}
+        p:first-child{color: red;}
+    </style>
+</head>
+<body>
+    <!-- style="color:green" -->
+    <p id="ctxt" class="atxt btxt" style="color:green">한국인은 비타민 D가 부족한 사람이 많다.</p>
+    <p>비타민D는 햇빛에 있다.</p>
+</body>
+</html>

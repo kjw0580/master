@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 만들기</title>
+    <!-- <link rel="stylesheet" href="../day02/css/board.css"> -->
+    <link rel="stylesheet" href="./css/product2.css">
+</head>
+<body>
+    <div id="container">
+    <nav>
+        <a href="./main.html">Home | </a>
+        <a href="./tangerine2.html">상품 소개 | </a>
+        <a href="./board.html">질문/답변 | </a>
+        <a href="./login.html">로그인</a>
+    </nav>
+    <div id="board">
+    <h2>질문/답변 게시판</h2>
+    <br>
+    <table id="tbl_board">
+        <!-- 열(칼럼-column)에 스타일 적용하기 -->
+        <colgroup>
+        <col style="background-color:rgb(197, 197, 197)">
+        <col style="background-color:rgb(255, 255, 255)">
+        <col style="background-color:rgb(197, 197, 197)">
+        <col style="background-color:rgb(255, 255, 255)">
+        </colgroup>
+        <tr>
+            <th>번호</th><th>제목</th><th>작성자</th><th>작성일</th>
+        </tr>
+        <tr>
+            <td>1</td><td>거리두기 해제</td><td>김대한</td><td>2022-05-10</td>
+        </tr>
+        <tr>
+            <td>2</td><td>동시 지방선거일</td><td>홍길동</td><td>2022-06-01</td>
+        </tr>
+        <tr>
+            <td>3</td><td>제목 없음</td><td>비공개</td><td>2022-12-25</td>
+        </tr>
+    </table>
+</div>
+</div>
+</body>
+</html>

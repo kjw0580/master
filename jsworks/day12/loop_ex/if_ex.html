@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>if 예제</title>
+        <script>
+            //나이가 15세 이상이면 "드라마 관람가", 아니면 "관람불가"
+            //입력 (변수 선언)
+            /* var age = 17;
+            
+            //제어 처리
+            if(age >=15){
+                document.write("드라마 관람가<br>");
+            }else{
+                document.write("드라마 관람불가<br>");
+            }
+            document.write("나이는" + age + "세 입니다.") */
+
+            //필기 점수가 60점 이상이면 "합격", 아니면 "불합격"
+
+
+
+            /* let score = 65;
+            let doo = "";
+
+            if(score >= 60){
+                doo = "합격";
+            }else{
+                doo = "불합격";
+            }
+            document.write("점수는 " + score + "점으로 " + doo + " 입니다."); */
+
+
+            // 조건 : 필기점수가 60점이상이고, 실기 점수가 70점 이상이면 "합격", 아니면 "불합격"
+            let score1 = Number(prompt("필기점수를 입력하세요","99"))
+            let score2 = Number(prompt("실기점수를 입력하세요","99"))
+
+            if(score1 >= 60 && score2 >= 70){
+                document.write("합격<br>");
+            }else{
+                document.write("불합격<br>");
+            }
+            document.write("필기점수는 " + score1 + " 점<br>" + "실기점수는 " + score2 + " 점입니다.")
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

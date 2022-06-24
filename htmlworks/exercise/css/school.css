@@ -1,0 +1,4 @@
+table{border:1px solid rgb(0, 0, 0); width:600px; border-collapse: collapse; /*caption-side: top; 캡션위치*/}
+tr, th, td{border:1px solid rgb(0, 0, 0);text-align: center; height:40px;}
+caption{margin-bottom:1em;}
+thead, tfoot {background-color: rgb(231, 231, 231);}

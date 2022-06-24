@@ -1,0 +1,9 @@
+git init - 깃 저장소 생성(local)
+git add .  ####
+git commit -m "first commit" ###
+git branch -M main
+git remote add origin https://github.com/kjw0580/test.git
+git push -u origin main ###
+
+- 깃허브에서 자료 다운로드
+git clone 원격저장소주소

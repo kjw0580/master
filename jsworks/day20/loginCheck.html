@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Check</title>
+    <script>
+        window.onload = function(){
+            var login = document.login;
+            login.onsubmit = function(){
+                if(!login.id.value){
+                    alert('아이디를 입력해주세요')
+                    login.id.focus();
+                    return false; //함수 종료후 폼전송 막기
+                }
+                if(!login.pw.value){
+                    alert('비밀번호를 입력해주세요')
+                    login.pw.focus();
+                    return false; //함수 종료후 폼전송 막기
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post" name="login">
+        <div><label for="id">아이디</label><input type="text" name="id" id="id"></div>
+        <div><label for="pw">비밀번호</label><input type="text" name="pw" id="pw"></div>
+        <div><input type="submit" value="확인"></div>
+    </form>
+</body>
+</html>

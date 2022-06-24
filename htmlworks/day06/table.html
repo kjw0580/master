@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표</title>
+    <style>
+        table{width: 100%; border-collapse: collapse;}
+        td, th{border:1px solid rgb(0, 0, 0); text-align: center;}
+        thead{background-color:#eee;}
+        .c1{background-color: #ccc;}
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <!-- <col style="background-color:#ccc"> -->
+            <col class="c1">
+            <col>
+            <col>
+        </colgroup>
+        <caption>웹 퍼블리싱 점수</caption>
+        <thead>
+            <tr>
+                <td>교과목</td>
+                <td>점수</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td rowspan="2">93</td>
+            </tr>
+            <tr>
+               <td>CSS</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>평균</td>
+                <td>92.5</td>
+            </tr>
+            <tr>
+                <th colspan="2" style="background-color:#0e0" rowspan="2">비고(셀 합치기)</th>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

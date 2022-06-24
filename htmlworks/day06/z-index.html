@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 쌓는 순서</title>
+    <style>
+        /* z-index 값이 크면 위에 쌓인다 
+            z-index 값을 명시하지 않으면 1부터 시작한다 */
+        div{width: 100px; height: 100px; position: absolute;}
+        .b1{background-color: red; top:50px; left:50px; z-index: 2;}
+        .b2{background-color: #0f0; top:70px; left:110px; z-index: 3;}
+        .b3{background-color: #00f; top:110px; left:80px; z-index: 4;}
+    </style>
+</head>
+<body>
+    <div class="b1"></div>
+    <div class="b2"></div>
+    <div class="b3"></div>
+</body>
+</html>

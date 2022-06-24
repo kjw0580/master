@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() 함수</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            /* $("button").click(function(){
+                // attr() 속성을 추가, 변경하는 함수
+                $("img").attr("width", "500px");
+            }) */
+
+            //on()함수 사용
+            $("button").on("click", function(){
+                //attr() 속성을 추가, 변경하는 함수
+                $('img').attr("width", "500px")
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="./img/cat.jpg" alt="고양이" width="400" height="300"><br>
+    <button type="button">확대</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치 프로그램</title>
+    <link rel="stylesheet" href="./css/stopwatch.css">
+    <script src="https://kit.fontawesome.com/319f0bada6.js" crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/stopwatch.js"></script>
+</head>
+<body>
+    <div id="box" class="box">
+        <div id="img">
+        <i id="run" class="fa-solid fa-person-running fa-beat-fade" style="--fa-beat-fade-scale: 1.5;"></i>
+        <i id="walk" class="fa-solid fa-person-walking"></i>
+        <i id="bed" class="fa-solid fa-bed fa-beat" style="--fa-animation-duration: 3s;"></i>
+        </div>
+        <div id="timerBox" Class="timerBox">
+            <div id="time" class="time">00:00:00</div>
+        </div>
+        <div class="btnBox">
+            <i Id="startbtn" class="fa fa-play"></i>
+            <i Id="pausebtn" class="fa fa-pause"></i>
+            <i Id="stopbtn" class="fa fa-stop"></i>
+        </div>
+    </div>
+</body>
+</html>

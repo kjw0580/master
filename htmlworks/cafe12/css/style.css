@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap');
+*{margin: 0; padding: 0; box-sizing:border-box;}
+/* 모바일 기준 - 780px 미만 */
+#container{margin:0 auto; width: 100%;}
+
+/* header 영역 */
+header{width: 100%; height: 300px;}
+nav{width: 100%; height: 60px; background: #000;}
+#main-nav {list-style: none; text-align: center;}
+#main-nav li{display: inline-block; margin:15px}
+#main-nav li a{ text-decoration: none; color: #fff;}
+#main-nav li a:hover{color: rgb(24, 84, 196); background: #fff; border-radius: 20px; padding: 10px;}
+#main-pic img{height: 240px; width: 100%;}
+
+/* section 스타일 */
+.page-title{font-family: 'Nanum Pen Script', cursive; font-size: 25px;}
+section{height: 350px; padding:10px 5%}
+section .page-title{margin-top:50px}
+section .content{margin:10px auto; padding: 10px}
+section .photo{display: none;}
+section p, h2, li{line-height: 2;}
+#choice{background: #ccc;}
+#choice ol{padding-left: 30px;}
+
+/* footer 스타일 */
+footer{width: 100%; height: 200px; border-top: 2px solid #222;}
+#bottomMenu {list-style: none; margin: 10px 10px 10px 40px}
+#bottomMenu li{display: inline-block; margin: 10px 0; border-right: 1px solid #ccc; padding: 0 10px;}
+#bottomMenu li:last-child{border:none}
+#bottomMenu li a{text-decoration: none; color: #444;}
+address{padding-left: 50px; font:15px normal; color:#000; line-height: 2; line-height: 2;}
+
+/* 태블릿 기준 */
+@media screen and (min-width: 780px) { 
+header{width: 100%;}
+section{height: 400px; overflow-y: auto;}
+#intro, #choice{width: 50%; float: left;}
+#map{clear: both;}
+}
+
+/* PC 기준 */
+@media screen and (min-width: 1000px) { 
+    #container{width: 1000px; margin: 0 auto;}
+    header{width: 100%;}
+    section{height: 350px;}
+    #intro, #choice{width: 100%;}
+    section img{border-radius: 10px;}
+    section .photo{display: block;}
+    section .photo p{text-align: center;}
+    #map img{border: 1px solid black}
+    #intro .photo, #map .photo{float: left; margin-right: 10px;}
+    #choice .photo{float: right; margin-left: 10px;}
+    #map{clear: both;}
+    }
+    

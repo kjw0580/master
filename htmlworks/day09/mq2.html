@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 바꾸기</title>
+    <style>
+        body{background: url(./images/bg0.jpg) no-repeat fixed; }
+        /* 가로가 1024px 이하이면 */
+        @media screen and (max-width: 1024px){body{background: url(./images/bg1.jpg);}}
+        @media screen and (max-width: 768px){body{background: url(./images/bg2.jpg);}}
+        @media screen and (max-width: 320px){body{background: url(./images/bg3.jpg);}}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* 메뉴 스타일 */
+*{margin:0; padding:0;}
+#container{width: 800px; margin:20px auto; border:none; padding:10px 20px; border-radius: 5px;}
+
+#mainhome{width:700px; border-radius: 15px; border:1px solid black}
+
+/* 메뉴 스타일 */
+nav{margin-bottom: 20px;}
+nav a{text-decoration: none; color:rgb(0, 0, 0);}
+
+/* 레드향 소개 스타일 */
+div{width:700px; border:1px solid black; padding:20px; margin-bottom: 30px;}
+
+#discription{border-radius: 30px 30px 0 0;}
+
+#tbl_package{border-collapse: collapse; width: 400px;}
+#tbl_package th,#tbl_package td{border:1px solid #ccc; text-align: center;}
+
+/* 질/답 게시판 스타일 */
+#tbl_board{border:2px solid rgb(0, 0, 0); border-collapse: collapse;width:500px; height:80px;}
+#tbl_board td, #tbl_board th{border:2px solid rgb(0, 0, 0); text-align: center;}
+
+#board{width:700px; border-radius: 15px; border:1px solid black}
+
+/* 로그인 스타일 */
+.tbl_login{width:300px; background-color:white; border-collapse: collapse; text-align: center; border:1px solid black}
+.tbl_login td{width:150px; height:30px; border:1px solid black}
+
+#login{width:700px; border-radius: 15px; border:1px solid black}
+
+#mainhome{text-align: center;}

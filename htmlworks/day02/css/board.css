@@ -1,0 +1,4 @@
+table{border:2px solid rgb(0, 122, 167); border-collapse: collapse;width:500px; height:30px;}
+td, th{border:2px solid rgb(0, 122, 167); text-align: center;}
+/* h2{text-align: center;} */
+nav a{text-decoration:none; color:rgb(64, 0, 80)}

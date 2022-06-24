@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 - 기본 선택자</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            //css() 함수 - 스타일 지정
+            $("*").css("background", "skyblue"); //전체 선택
+            /* $("h2").css("color", "yellow"); //태그 선택
+            $("h2").css({"font-family" : "궁서체"}); //중괄호 객체 데이터 */
+            $("h2").css({"color" : "#ff0", "font-family" : "궁서체"})
+            $("#demo").css("font-size", "20px"); //ID 선택
+            $(".list > li").css("margin", "15px"); //Class 선택
+
+            //탐색(가상) 선택자
+            $(".list li:odd").css("background", "yellow"); //2, 4, 6
+            $(".list li:even").css("background", "gray"); //1, 3, 5
+        });
+    </script>
+</head>
+<body>
+    <h2>제이쿼리 선택자</h2>
+    <p id="demo">아이디 선택자</p>
+    <ul class="list">
+        <li>봄</li>
+        <li>여름</li>
+        <li>가을</li>
+        <li>겨울</li>
+    </ul>
+</body>
+</html>

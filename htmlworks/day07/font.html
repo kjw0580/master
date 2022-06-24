@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font 관련 스타일</title>
+    <style>
+        /* 기본 - 16px
+            rem은 16px에 곱하는 단위
+            em은 부모 태그의 크기에 곱하는 단위
+            2em = 12 * 2 = 24px;
+            2rem = 16 * 2 = 32px;            */
+        ul{font-size: 12px;}
+        li{font-size: 2em;}
+        li:nth-child(4){font-size: 2rem;}
+    </style>
+</head>
+<body>
+    <p>오늘의 진료는 본관에서 실시합니다.</p>
+    <ul>
+        <li>내과</li>
+        <li>이비인후과</li>
+        <li>정형외과</li>
+        <li>피부과</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation2</title>
+    <style>
+    .ani_box {
+        position: relative;
+        width: 100px; height: 100px; 
+        background:url(./images/bg_animation.png) no-repeat center;
+    }
+    .flower {
+        position: absolute; left: 10px; top: 10px;
+    }
+    .flower1 { animation: myani1 2s infinite; }
+    .flower2 { animation: myani2 2s infinite; }
+    /* 애니메이션 이름 시간 반복 */
+    @keyframes myani1 {
+	    0% { transform: scale(0.5, 0.5); opacity: 0.7;}
+	    100% { transform: scale(1.5, 1.5); opacity: 0;}
+        /* 크기 0.5배 1.5배 불투명도 0.7 에서 끝날때 0 */
+	}
+    @keyframes myani2 {
+	    0% { transform: scale(1, 1); opacity: 1;}
+	    100% { transform: scale(2, 2); opacity: 0;}
+	}
+</style>
+</head> 
+<body>
+    <div class="ani_box">
+	    <img class="flower flower1" src="./images/ani_spade.png" alt="flower1">
+	    <img class="flower flower2" src="./images/ani_spade.png" alt="flower2">
+    </div>
+</body> 
+</html>

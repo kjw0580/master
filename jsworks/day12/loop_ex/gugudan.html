@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 3px solid rgb(17, 113, 177); width: 100px; display: inline-block; margin: 10px; padding: 10px; border-radius: 20px;}
+        div:hover{background-color: rgb(68, 152, 163); color: white;}
+        p{text-align: center; font-size: 20px; margin: 0 0 10px 0; border-bottom: 1px solid #000;}
+    </style>
+</head>
+<body>
+    <script>
+    for(let i = 2; i <= 9; i++){
+        document.write("<div>")
+        document.write("<p>" + i + " 단</p>" )
+        for(let j = 1; j <= 9; j++){
+            document.write(i + " X " + j + " = " + (i*j) + "<br>");
+        }
+        // document.write("<br>")
+        document.write("</div>")
+    }
+    </script>
+</body>
+</html>

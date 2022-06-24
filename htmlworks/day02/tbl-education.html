@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 구조 사용하기</title>
+    <style>
+        table{border:1px solid #ccc; border-collapse: collapse; width:500px; }
+        th, td{ border:1px solid ; height:30px; text-align:center; }
+        thead{background-color: #eee;}
+        caption{margin-bottom:1em;}
+    </style>
+</head>
+<body>
+    <h2>학력(Education)</h2>
+    <table>
+        <caption>학력사항</caption>
+        <thead>
+            <tr>
+                <th>출신학교</th>
+                <th>전공</th>
+                <th>기간</th>
+                <th>구분</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>한강대학교</td>
+                <td>소프트웨어학과</td>
+                <td>2010.3~2016.2</td>
+                <td>졸업</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

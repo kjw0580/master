@@ -1,0 +1,19 @@
+body,header,div,footer,h1,p,ul,li {margin:0; padding:0;}
+li {list-style-type:none;}
+body {font:14px 'Malgun Gothic','맑은고딕';}
+a {text-decoration:none; color:#444;}
+a:hover {text-decoration:underline;}
+#wrap {background:#cfc;}
+header {background:crimson; position:fixed; top:0; left:0; 
+    width:100%; height:40px;}
+header h1 {float:left; margin-right:40px;}
+header .gnb {float:left; padding-top:10px;}
+header .gnb li {float:left;}
+header .gnb li a {display:block; width:50px; text-align:center; font-size:16px;}
+#container {margin-top:40px;}
+.lnb {float:left; width:20%; background:lightgreen;}
+.lnb li a {display:block; padding:5px 20px;}
+.content_area {float:left; width:80%; background:forestgreen;}
+footer {padding:10px; background:lightgray;}
+footer p {text-align:center;}
+.clear:after {content:""; display:block; clear:both;}

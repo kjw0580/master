@@ -1,0 +1,11 @@
+body, h1, p{margin: 0; padding: 0;}
+h1{margin:10px}
+p{margin-left: 10px;}
+.gallery{list-style: none; padding: 10px;}
+.gallery h3{text-align: center; }
+.gallery li{float: left; width: 150px; margin-right: 10px}
+.gallery li h3{background: #daa;}
+.gallery li + li h3{background: #abc;}
+.gallery li + li + li h3{background: #eba;}
+.gallery li + li + li + li h3{background: #aa7;}
+.gallery li p{text-align: justify; padding: 10px;}

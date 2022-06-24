@@ -1,0 +1,9 @@
+ul li{
+    /* list-style-type: circle; */
+    /* list-style: none; 불릿 제거 */
+    list-style-image: url("../image/dot.png");
+}
+ol li{
+    /* list-style-type: circle; */
+    list-style-type: lower-alpha;
+}

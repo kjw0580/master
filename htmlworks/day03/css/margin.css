@@ -1,0 +1,6 @@
+div{width: 200px; height: 100px; border:3px rgba(000, 000, 000) solid; margin: 30px;}
+#box1{/* width: 200px; height: 100px; border:3px rgba(000, 000, 000, 0.8) solid; */ margin: 30px;}
+#box2{/* width: 200px; height: 100px; border:3px rgba(000, 000, 000, 0.6) solid; */ margin: 30px 50px;}
+#box3{/* width: 200px; height: 100px; border:3px rgba(000, 000, 000, 0.4) solid; */ margin: 30px 50px;}
+#box4{/* width: 200px; height: 100px; border:3px rgba(000, 000, 000, 0.2) solid; */ margin: 30px 50px 30px 50px;}
+/* 위 마진과 아래 마진이 서로 만날때 큰 마진값으로 합쳐짐 ( */

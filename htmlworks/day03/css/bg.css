@@ -1,0 +1,6 @@
+div{width: 600px; height: 600px; border:1px solid #000; margin-bottom: 20px;}
+.pic1{background:url("../image/bg5.jpg"); background-size: auto;}
+.pic2{background:url("../image/bg5.jpg") no-repeat; background-size: 400px;}
+.pic3{background:url("../image/bg5.jpg") no-repeat; background-size: 60%; background-position: right 10px bottom 10px;}
+.pic4{background:url("../image/bg5.jpg") no-repeat; background-size: contain;} /* 이미지가 전체 비율로 축소됨 */
+.pic5{background:url("../image/bg5.jpg") no-repeat; background-size: cover;} /* 이미지가 요소를 채우고 나머지는 잘림 */

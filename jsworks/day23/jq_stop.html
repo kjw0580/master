@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과</title>
+    <style>
+        div{width: 100px; height: 100px; background: #0f0;}
+    </style>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $("p #start").click(function(){
+                $("div").animate({height: 300, width: 300}, 2000)
+                $("div").animate({height: 100, width: 100}, 2000)
+            });
+            $("p #stop").click(function(){
+                $("div").stop(); //현재 동작중인 애니메이션 동작만 정지함
+            })
+        });
+    </script>
+</head>
+<body>
+    <p><button id="start">start</button> <button id="stop">stop</button></p>
+    <div></div>
+</body>
+</html>

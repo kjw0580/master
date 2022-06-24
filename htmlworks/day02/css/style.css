@@ -1,0 +1,9 @@
+/* 외부 스타일 */
+body{background-color: black;}
+h2{color:rgb(39, 255, 31);}
+p{
+    font-size: 18px; /* 글씨 크기 */ 
+    font-family: "바탕체"; /* 글꼴 */
+    color:white; /* 글씨 색상 */
+    /* color : white,black & #ffffff, #0000ff & rgb(nnn, nnn, nnn) */
+}

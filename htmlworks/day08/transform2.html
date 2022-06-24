@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.b{width: 150px; height: 80px; background-color: aquamarine; transform: rotate(20deg);}
+        div.b:hover{background-color: gray; color: white; transform: rotate(-20deg); transition-duration: 1.5s;}
+        div.b:active{background-color: rgb(252, 116, 116); color: rgb(16, 0, 162); transform: none; font-size: 50px; width: 300px; height: 160px;}
+        div.c{width: 150px; height: 80px; background-color: aquamarine; transform: translateX(50px); transition-duration: 1.5s;}
+        div.c:hover{transform: translateX(150px);}
+        div.d{width: 150px; height: 80px; background-color: aquamarine; transform: scaleY(1.5);}
+    </style>
+</head>
+<body>
+    <h2>transform :rotate(20deg)</h2>
+    <div class="b">Hello World</div>
+    <h2>transform :translateX(50px)</h2>
+    <div class="c">Hello World</div>
+    <h2>transform :scaleY(1.5)</h2>
+    <div class="d">Hello World</div>
+</body>
+</html>

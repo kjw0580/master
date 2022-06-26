@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 html{height: 100%;}
 *{margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+a{text-decoration: none;}
+li{list-style: none;}
 #mainContainer{margin: 0; padding: 0; width: 100%; height: 100%;}
 .clear{clear: both;}
 
@@ -23,8 +25,8 @@ header{width: 100%; height: 80px; background: #FD6A80;}
 .login ul li{list-style: none; float: left; box-sizing: border-box; margin: 0px 20px; line-height: 80px;}
 
 /* section 영역 */
-section{height: 1200px; width: 100%;}
-section .row{height: 1000px; margin: 10px 0px;}
+section{width: 100%; height: 100%;}
+section .row{height: 1150px; margin: 10px 0px;}
 section .maindiv{border-right: 2px solid #ddd; height:100%; box-sizing: border-box;}
 section .maindiv:last-child{border:none}
 
@@ -53,7 +55,39 @@ section .chatlistbox p{color: black; margin: 30px 0px 0px 0px; overflow: hidden;
 .telepathy button{width: 30%; margin:0 15px; border-radius: 10px; background: #fff;}
 .telepathy button:hover{background: #FD6A80; color: white;}
 .telehead{color:white; background: #FD6A80; height: 40px; line-height: 40px; border-radius: 15px 15px 0px 0px;}
+#digit{text-align:center; width: 100%; height: 30px;}
+.gameTimer{width: 80%; background: #fff; margin-left: auto; margin-right: auto; height: 30px;}
+.timerBar{width: 100%; background: #FD6A80; height: 100%; border-radius: 20px;}
+.element{animation: timer 300s linear infinite;}
+.versus1{z-index: 1; position: relative;}
+.versus2{position: relative; top: -160px;}
+.vindex{z-index: 2;}
+#timerbox{position: relative; top: -100px;width: 100%; height: 300px;}
+@keyframes timer {from {width:100%;} to {width:0%}}
 
+/* rightSection */
+.rightHeader{width: 100%; height: 50px;}
+.lebox, .rgbox{line-height: 50px;width: 50%; height: 50px; border-bottom: 1px solid #eee; float: left; text-align: center; font-weight: 900; font-size: 15px;}
+.lebox:hover, .rgbox:hover{background: #FD6A80; color: white;}
+.lebox{border-right: 1px solid #eee;}
+
+#tabMenu{width: 100%; height: 100%;}
+#tabMenu input[type="radio"]{display: none;}
+#tabMenu label{display: inline-block; margin: 0; padding: 15px 25px; text-align: center; 
+    color: #aaa; border: 1px solid transparent; box-sizing: border-box; width: auto; font-size: 14px;font-weight: 900; width: 49%;}
+#tabMenu label:hover{color: #FD6A80; cursor: pointer;}
+#tabMenu input:checked + label{color: #ffffff; border: 1px solid #ddd; background:#FD6A80}
+/* 공지사항은 checked 이므로 처음부터 보이고 갤러리는 숨김 */
+.tabContent { display:none; padding:20px 0 0; border-top:1px solid #ddd;} 
+.tabContent h2{display: none;}
+#notice ul{width: 100%; padding: 0;}
+#notice ul li{float: left; width: 50%;}
+#notice img{width: 100%; border-radius: 20px;}
+#gallery ul{width: 100%; overflow: hidden;}
+#gallery li{list-style:disc; margin-bottom: 30px;}
+
+/* 형제 선택자 '~' 사용, 부모는 tabMenu */
+#tab1:checked ~ #notice, #tab2:checked ~ #gallery{display: block;}
 
 /* footer 영역 */
 footer{border-top:1px solid #ddd; width: 100%;}
@@ -63,9 +97,16 @@ footer .foot_list li:last-child{border: none;}
 footer .foot_list li a{color: #000; text-decoration: none; margin-right: 25px; font-size: 0.8em; width: 100%;}
 
 /* 태블릿 기준 */
-@media all and (max-width:1191px) and (min-width:768px) {
+@media all and (max-width:992px) and (min-width:768px) {
+section{width: 100%; height: 2300px;}
+section .maindiv{ border-right:none;}
+section .maindiv:first-child{border-right: 2px solid #ddd;}
+section .right{margin-top: 100px;}
 header .matAlarm{display: none;}
 header .login{width: 70%;}
+#notice ul{width: 100%; padding: 0;}
+#notice ul li{float: left; width: 33%;}
+#notice img{width: 100%; border-radius: 20px;}
 }
 
 /* 모바일 기준 */
@@ -77,10 +118,16 @@ header .matAlarm{display: none;}
 .login ul li:nth-child(2), .login ul li:nth-child(3), .login ul li:nth-child(4){display: none;}
 
 /* M_footer 영역 */
-footer{border-top:1px solid #ddd; width: 100%;}
-footer .foot_list{list-style: none; margin:50px 20px; /* margin-left: 10px; */ height: 100px; width: 100%; box-sizing: border-box; padding: 0;}
+section{width: 100%; height: 3700px;}
+section .maindiv{ border-top: #000 1px solid; padding: 20px; border-right: none;}
+section .right{ border-top: #000 1px solid; padding: 20px; border-right: none;}
+section .maindiv:first-child{border: none;}
+#notice ul{width: 100%; padding: 0;}
+#notice ul li{float: left; width: 50%;}
+#notice img{width: 100%; border-radius: 20px;}
+footer{border-top:1px solid #ddd; width: 100%; height: 80px;}
+footer .foot_list{list-style: none; margin:50px 20px; height: 100px; width: 100%; box-sizing: border-box; padding: 0;}
 footer .foot_list li{float: left; margin-right: 10px; border: none;}
 footer .foot_list li{border-right:1px solid rgba(0, 0, 0, 0.2);}
 footer .foot_list li a{margin-right: 10px;}
-
 }

@@ -65,18 +65,60 @@
                         <div class="chatBox cb2">겜한판 할래요?</div>
                         <h4>금요일 오후 5:44</h4>
                         <div class="chatBox cb3">좋아요~~</div>
-                        <div class="telepathy clear">
+                        <div class="telepathy versus1 clear">
                             <div class="telehead"><i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i>&nbsp;&nbsp;&nbsp;&nbsp;우리.. 얼마나 맞을까?&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i></div>
                             <b>게임을 시작하시겠습니까?</b>
                             <p>(일치시 광고 제거 1회 효과)</p>
-                            <button>네</button> <button>아니오</button>
+                            <button id="start">네</button> <button>아니오</button>
                         </div>
-                        
+                        <div class="telepathy versus2 clear">
+                            <div class="telehead"><i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i>&nbsp;&nbsp;&nbsp;&nbsp;내가 더 좋아하는것은?&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i></div>
+                            <b>짜장면 vs 짬뽕</b>
+                            <p>(일치시 광고 제거 1회 효과)</p>
+                            <button>짜장</button> <button>짬뽕</button>
+                        </div>
+                        <div id="timerbox">
+                        <div id="digit">300초</div>
+                        <div class="gameTimer">
+                            <div class="timerBar"></div>
+                        </div>
+                        </div>
+                        <form class="searchform sendchat">
+                            <input class="searchBox" type="text" placeholder="      메세지를 입력하세요">
+                            <button class="searchBtn" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 
-                    <div class="col-xs-12 col-md-6 col-lg-3 maindiv right">
-                
-                      3 of 3
+                    <div class="col-xs-12 col-md-12 col-lg-3 maindiv right">
+                        <div id="tabMenu">
+                            <input type="radio" id="tab1" name="tabs" checked>
+                            <label for="tab1">내가 받은 하트</label>
+                            <input type="radio" id="tab2" name="tabs">
+                            <label for="tab2">서로 매치</label>
+                            <div id="notice" class="tabContent">
+                                <h2>내가 받은 하트</h2>
+                                <ul>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                    <li><img src="./img/myheartbox.PNG"></li>
+                                </ul>
+                            </div>
+                            <div id="gallery" class="tabContent">
+                                <h2>서로매치</h2>
+                                <ul>
+                                    <li>정선필님과 정채연님의 매칭이 성사되었습니다.</li>
+                                    <li>한지수님과 김지민님의 매칭이 성사되었습니다.</li>
+                                    <li>김**님과 박**님의 매칭이 성사되었습니다.</li>
+                                    <li>김**님과 박**님의 매칭이 성사되었습니다.</li>
+                                    <li>김**님과 박**님의 매칭이 성사되었습니다.</li>
+                                    <li>김**님과 박**님의 매칭이 성사되었습니다.</li>
+                                    <li>김**님과 박**님의 매칭이 성사되었습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                 
                     </div>
                 

@@ -14,9 +14,9 @@ public class KeyRepeat {
 			
 			//String 클래스의 메서드인 equals()는 문자열 비교할 때 사용
 			//숫자 비교 : "==" 사용
-			if(key.equals("y")) { //String형이므로 쌍따옴표 사용
+			if(key.equals("y") || key.equals("Y")) { //String형이므로 쌍따옴표 사용
 				System.out.println("계속 반복");
-			}else if(key.equals("n")) {
+			}else if(key.equals("n") || key.equals("N")) {
 				System.out.println("반복 중단");
 				break;
 			}else {

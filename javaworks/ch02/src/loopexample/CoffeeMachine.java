@@ -16,10 +16,11 @@ public class CoffeeMachine {
 				coffee -= 1; //커피 개수 1감소
 			}
 			else if(money > 500) {
-				System.out.println("거스름돈 " + (money - 500) + "원을 돌려주고 커피가 나옵니다.");
+				//System.out.println("거스름돈 " + (money - 500) + "원을 돌려주고 커피가 나옵니다.");
+				System.out.printf("거스름돈 %d원을 돌려주고 커피가 나옵니다.", (money - 500));
 				coffee -= 1;
 			}
-			else {
+			else {//money < 500
 				System.out.println("돈을 돌려주고 커피는 나오지 않습니다.");
 			}
 			System.out.println("남은 커피의 양은 " + coffee + "개입니다.");

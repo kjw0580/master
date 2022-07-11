@@ -1,4 +1,4 @@
-package singleton;
+package singleton.car;
 
 public class Car {
 
@@ -15,3 +15,4 @@ public class Car {
 		return carNum;
 	}
 } 
+ 

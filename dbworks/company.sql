@@ -18,22 +18,41 @@ CREATE TABLE employee(
 -- 부서 자료 추가
 INSERT INTO department VALUES (10, '전산팀', '서울');
 INSERT INTO department VALUES (20, '총무팀', '인천');
+INSERT INTO department VALUES (40, '행정팀', '부천');
 
 -- 사원 자료 추가
 INSERT INTO employee VALUES (101, '이강', 27, 10);
 INSERT INTO employee VALUES (102, '김산', 28, 20);
-INSERT INTO employee VALUES (103, '정들', 35, 30); --부서 코드 없음. 오류
+INSERT INTO employee VALUES (103, '정들', 35, 40);
+INSERT INTO employee VALUES (103, '정들', 35, 30);--부서 코드 없음. 오류
 
 -- 부서 삭제
-DELETE FROM department
+DELETE FROM department;
 
 -- 외래키 제약 조건 삭제
-ALTER TABLE employee DROP CONSTRAINT EMP_FK;
+ALTER TABLE employee DROP CONSTRAINT EMP_FK FOREIGN KEY(deptid) REFERENCES department(deptid);
 
 -- 자료 검색
 SELECT * FROM department;
 SELECT * FROM employee;
 
+--테이블 삭제
+DROP TABLE department CASCADE CONSTRAINTS;
+DROP TABLE employee;
+
+--검색
+SELECT * FROM department; 
+SELECT * FROM employee;
+
+
+SELECT salary, salary/30 일급, 
+TRUNC(salary/30, 1) 결과1,
+TRUNC(salary/30, 0) 결과2,
+TRUNC(salary/30, -1) 결과3,
+TRUNC(salary/30, -2) 결과4,
+FROM employee;
+
+commit;
 
 
 

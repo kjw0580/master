@@ -1,19 +1,15 @@
 package sec02.exam01;
 
 public class IntegerLiteralExample {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int var1 = 0b1011;  //2ì§„ìˆ˜
-		int var2 = 0206;  //8ì§„ìˆ˜
-		int var3 = 365;  // 10ì§„ìˆ˜
-		int var4 = 0xb3; // 16ì§„ìˆ˜
-
-		System.out.println(var1);
-		System.out.println(var2);
-		System.out.println(var3);
-		System.out.println(var4);
+		int var1 = 0b1011;		//2Áø¼ö		
+		int var2 = 0206;		//8Áø¼ö
+		int var3 = 365;			//10Áø¼ö
+		int var4 = 0xB3;		//16Áø¼ö
 		
+		System.out.println("var1: " + var1);
+		System.out.println("var2: " + var2);
+		System.out.println("var3: " + var3);
+		System.out.println("var4: " + var4);
 	}
-
 }

@@ -16,7 +16,7 @@
 		<p><a href="./addrForm.jsp">주소 추가</a>
 		<table id="tbl_list">
 			<tr>
-				<td>이름</td><td>전화번호</td><td>이메일</td><td>성별</td><td>보기</td><td>삭제</td>
+				<th>이름</th><th>전화번호</th><th>이메일</th><th>성별</th><th>보기</th><th>삭제</th>
 			</tr>
 			<%
 				for(int i=0; i<abDAO.getListAll().size(); i++){
@@ -29,7 +29,8 @@
 				<td><%=addrBook.getGender() %></td>
 				<td><a href="./addrView.jsp?username=<%=addrBook.getUsername() %>">
 					<button type="button">보기</button></a></td>
-				<td><a onclick="return confirm('정말로 삭제하시겠습니다?')" href="./addrDelete.jsp?username=<%=addrBook.getUsername() %>">
+				<td><a onclick="return confirm('정말로 삭제하시겠습니까?')"
+					   href="./addrDelete.jsp?username=<%=addrBook.getUsername() %>">
 					<button type="button">삭제</button></a></td>
 			</tr>
 			<% } %>

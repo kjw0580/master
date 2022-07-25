@@ -25,12 +25,11 @@ public class AddrBookDAO {
 			//이름 비교
 			String dbUser = ab.getUsername(); //이미 입력된 이름 가져오기
 			if(dbUser.equals(username)) { //입력된 이름과 외부 입력 이름이 같으면
-				abByUsername = ab; //해당 객체 저장
+				abByUsername = ab;  //해당 객체 저장
 				break;
 			}
 		}
-		
-		return abByUsername;
+		return abByUsername; //객체 반환해 줌
 	}
 	
 	//주소 삭제
@@ -38,12 +37,21 @@ public class AddrBookDAO {
 		for(int i=0; i<addrList.size(); i++) {
 			AddrBook ab = addrList.get(i);
 			//이름 비교
-			String dbUser = ab.getUsername(); //이미 입력된 이름 가져오기
+			String dbUser = ab.getUsername();
 			if(dbUser.equals(username)) { //입력된 이름과 외부 입력 이름이 같으면
-				addrList.remove(i);
+				addrList.remove(i);  //해당 객체 삭제
 				break;
 			}
 		}
-	
 	}
 }
+
+
+
+
+
+
+
+
+
+

@@ -153,10 +153,10 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 
-      <Context docBase="jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/>
+      
       <Context docBase="jweb2" path="/jweb2" reloadable="true" source="org.eclipse.jst.jee.server:jweb2"/>
-      <Context docBase="C:\\master\\jspworks\\jweb2\\src\\main\\webapp\\upload" path="/jweb2/upload"  reloadable="true"/>
-      </Host>
+      <Context docBase="C:\\master\\jspworks\\jweb2\\src\\main\\webapp\\upload" path="/jweb2/upload" reloadable="true"/>
+      <Context docBase="AddrBook" path="/AddrBook" reloadable="true" source="org.eclipse.jst.jee.server:AddrBook"/><Context docBase="jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/></Host>
     </Engine>
   </Service>
 </Server>

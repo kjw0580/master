@@ -6,10 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/header.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
-        <a href="#"><div id="topBox"></div></a>
+        <a href="./index.html"><div id="topBox"></div></a>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a href="./htmlStudy.html">HTML</a></div>
+              <div class="swiper-slide"><a href="./cssStudy.html">CSS</a></div>
+              <div class="swiper-slide"><a href="./javascriptStudy.html">JavaScript</a></div>
+              <div class="swiper-slide"><a href="./javaStudy.html">JAVA</a></div>
+              <div class="swiper-slide"><a href="./dbStudy.html">Database</a></div>
+              <div class="swiper-slide"><a href="./jspStudy.html">JSP</a>P</div>
+              <div class="swiper-slide"><a href="./springStudy.html">Spring</a></div>
+              <div class="swiper-slide"><a href="./springBootStudy.html">SpringBoot</a></div>
+              <div class="swiper-slide"><a href="./myPage.html">My Profile</a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
     </header>
 
     <section>

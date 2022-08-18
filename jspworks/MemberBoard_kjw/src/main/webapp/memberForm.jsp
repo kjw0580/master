@@ -8,7 +8,6 @@
 <title>회원 가입</title>
 <script src="./resources/js/checkMember.js"></script>
 <link rel="stylesheet" href="./resources/css/com.css">
-<link rel="stylesheet" href="./resources/css/com.css">
 </head>
 <jsp:useBean id="memberDAO" class="com.repository.MemberDAO" scope="application" />
 <body>

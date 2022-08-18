@@ -7,9 +7,12 @@
 <meta charset="UTF-8">
 <title>회원 정보</title>
 <style>
-table{width:400px; margin:0 auto; text-align:center;}
-table, td, th{border: 1px solid #ccc; border-collapse:collapse}
-table td{height: 50px;}
+	#container{width: 80%; margin: 0 auto; text-align: center}
+	
+	table{width: 400px; margin: 0 auto;}
+	table, td{border: 1px solid #ccc; border-collapse: collapse;}
+	table td{height: 40px;}
+	table input{height: 25px;}
 </style>
 </head>
 <body>
@@ -18,12 +21,10 @@ table td{height: 50px;}
 		<hr>
 		<table>
 			<tr>
-				<th>아이디</th>
-				<th>패스워드</th>
-				<th>이름</th>
+				<td>아이디</td><td>패스워드</td><td>이 름</td>
 			</tr>
 			<tr>
-				<!-- String id = request.getParameter("id") -->
+		   <%-- <%= request.getParameter("id") %> --%>
 				<td>${param.id}</td>
 				<td>${param.passwd}</td>
 				<td>${param.name}</td>
@@ -32,3 +33,11 @@ table td{height: 50px;}
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+

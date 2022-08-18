@@ -25,8 +25,8 @@
   		<role-name>role1</role-name>
   	</auth-constraint>
   </security-constraint>
- <!--  기본 인증 방식
-  <login-config>
+  <!-- 기본 인증 방식  -->
+  <!-- <login-config>
   	<auth-method>BASIC</auth-method>
   </login-config> -->
   
@@ -38,4 +38,28 @@
   		<form-error-page>/login_failed.jsp</form-error-page>
   	</form-login-config>
   </login-config>
+  
+  <!-- 예외 처리 -->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/exception/errorCode_msg.jsp</location>
+  </error-page>
+  
+  <!-- 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>calcServlet</servlet-name>
+  	<servlet-class>com.mvc.CalcServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>calcServlet</servlet-name>
+  	<url-pattern>/mvc/calc</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
+
+
+
+
+
+

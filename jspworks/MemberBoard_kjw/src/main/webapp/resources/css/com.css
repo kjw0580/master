@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*  공통  */
+*{margin:0; padding:0; color:#F8ECD1;}
+li{list-style:none;}
+a{text-decoration:none;}
+input[type="text"], [type="password"]{padding:5px; width: 200px; height: 25px; border:#85586F; background:#AC7D88; color:#F8ECD1;}
+input[type="submit"], input[type="reset"], 
+input[type="button"]{padding:10px; border:#85586F; background:#AC7D88; color:#F8ECD1;}
+select, option{padding:5px 10px; border:#85586F; background:#AC7D88; color:#F8ECD1;}
+
+/* table 스타일 */
+.tbl{width: 450px; margin: 0 auto;}
+.tbl, td{border: 3px solid #AC7D88; 
+	border-collapse: collapse; padding: 10px;}
+.tbl_list, .tbl_write, .tbl_bo_view{width: 700px; margin: 0 auto;}
+.tbl_list, .tbl_write, .tbl_bo_view, th, td{border: 1px solid #AC7D88; 
+	border-collapse: collapse; padding: 10px;}
+.tbl_list thead{background: #85586F;}
+
+.tbl_write{border: 3px solid #AC7D88; 
+	border-collapse: collapse; padding: 10px; background:#AC7D88;}
+.tbl_write .w_title{width: 650px; height: 25px; background:#F8ECD1; color:black;}
+.tbl_write .w_content{width: 650px; background:#F8ECD1; color:black;}
+
+.tbl_bo_view td{background:#AC7D88;}
+.tbl_bo_view .bo_v_title, .tbl_bo_view .bo_v_id{width: 580px; height: 25px; background:#DEB6AB; color:#85586F;}
+.tbl_bo_view textarea{width: 580px; background:#DEB6AB; color:#85586F;}
+.tbl_bo_view td:nth-child(1){width: 100px; background: #85586F;}
+
+/* 컨테이너 */
+#container{width:100%; height:800px; text-align:center; background:#DEB6AB;}
+
+h1{padding:20px 0px}

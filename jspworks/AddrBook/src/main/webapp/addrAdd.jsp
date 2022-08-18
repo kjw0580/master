@@ -11,10 +11,12 @@
 <link rel="stylesheet" href="./resources/css/addrbook.css">
 </head>
 <jsp:useBean id="addrBook" class="com.dao.AddrBook" />
+<jsp:setProperty property="num" name="addrBook"/>
 <jsp:setProperty property="username" name="addrBook"/>
 <jsp:setProperty property="tel" name="addrBook"/>
 <jsp:setProperty property="email" name="addrBook"/>
 <jsp:setProperty property="gender" name="addrBook"/>
+<jsp:setProperty property="joinDate" name="addrBook"/>
 <jsp:useBean id="abDAO" class="com.dao.AddrBookDAO" scope="application"/>
 <!-- setProperty 이후 ArrayList에 저장됨 -->
 <!-- scope : application(웹 페이지 전체에 걸쳐서 공유, 저장 기능) -->

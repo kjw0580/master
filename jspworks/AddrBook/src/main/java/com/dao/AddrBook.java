@@ -3,11 +3,11 @@ package com.dao;
 import java.io.Serializable;
 import java.util.Date;
 
-public class AddrBook implements Serializable {
+public class AddrBook implements Serializable{
 
 	private static final long serialVersionUID = 1234L;
 	
-	//
+	//필드 
 	private int num;
 	private String username;
 	private String tel;

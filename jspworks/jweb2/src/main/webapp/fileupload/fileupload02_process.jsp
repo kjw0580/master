@@ -1,21 +1,20 @@
-<%@page import="java.io.File"%>
 <%@page import="java.util.Enumeration"%>
-<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<style type="text/css">
-table{width: 300px;}
-table, th{border: 1px solid black; padding:10px ;}
+    pageEncoding="UTF-8"%>
+<style>
+	table{width: 800px;}
+	table, th, td{
+		border: 1px solid #ccc;
+		border-collapse: collapse;
+		padding: 10px;
+	}
 </style>
 <%
-   request.setCharacterEncoding("utf-8");
-
-	//업로드 폴더 경로
-	String realFolder = "C:\\master\\jspworks\\jweb2\\src\\main\\webapp\\upload";
-
-	//5개의 매개변수 설정
-	MultipartRequest multi = new MultipartRequest(request, realFolder, 5 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+	String realFolder = "C:\\Dev\\jspworks\\jweb2\\src\\main\\webapp\\upload";
+	MultipartRequest multi = new MultipartRequest(request, realFolder, 
+			5*1024*1024, "utf-8", new DefaultFileRenamePolicy());
 	
 	//폼 데이터 가져오기
 	String name1 = multi.getParameter("name1");
@@ -26,50 +25,57 @@ table, th{border: 1px solid black; padding:10px ;}
 	
 	String name3 = multi.getParameter("name3");
 	String title3 = multi.getParameter("title3");
-
-	//파일 정복 가져오기(스택 자료 구조)
+	
+	//파일 정보 가져오기(스택 구조이므로 나중에 저장된 파일 꺼내옴)
 	Enumeration<String> files = multi.getFileNames();
 	
-	String file3 = files.nextElement();
-	String filename3 = multi.getFilesystemName(file3);
+	String files3 = files.nextElement();
+	String filename3 = multi.getFilesystemName(files3);
 	
-	String file2 = files.nextElement();
-	String filename2 = multi.getFilesystemName(file2);
+	String files2 = files.nextElement();
+	String filename2 = multi.getFilesystemName(files2);
 	
-	String file1 = files.nextElement();
-	String filename1 = multi.getFilesystemName(file1);
-	
-/* Enumeration<String> files = multi.getFileNames();
-	
-	while (files.hasMoreElements()) { //파일이 있다면 반복
-        String name = files.nextElement(); //파일의 이름을 가져오기
-        String fileName = multi.getFilesystemName(name); //서버에 업로드 된 파일 가져오기
-        String original = multi.getOriginalFileName(name); //파일이 서버에 저장되기 전 파일 이름
-        String type = multi.getContentType(name); //파일이 콘텐츠 유형
-        File file = multi.getFile(name);   //전송된 파일의 정보나 경로 */
+	String files1 = files.nextElement();
+	String filename1 = multi.getFilesystemName(files1);
 %>
 <table>
-	<tr>
-		<th>이름</th>
-		<th>제목</th>
-		<th>파일</th>
-	</tr>
-	<tr>
-		<th><%=name1 %></th>
-		<th><%=title1 %></th>
-		<th><%=filename1 %></th>
-		<th><img src="../upload/<%=filename1 %>"></th>
-	</tr>
-	<tr>
-		<th><%=name2 %></th>
-		<th><%=title2 %></th>
-		<th><%=filename2 %></th>
-		<th><img src="../upload/<%=filename2 %>"></th>
-	</tr>
-	<tr>
-		<th><%=name3 %></th>
-		<th><%=title3 %></th>
-		<th><%=filename3 %></th>
-		<th><img src="../upload/<%=filename3 %>"></th>
-	</tr>
+  <tr>
+    <th>이 름</th>
+    <th>제 목</th>
+    <th>파 일</th>
+    <th>이미지</th>
+  </tr>
+  <tr>
+  	<td><%=name1 %></td>
+  	<td><%=title1 %></td>
+  	<td><%=filename1 %></td>
+  	<td><img src="../upload/<%=filename1 %>"></td>
+  </tr>
+  <tr>
+  	<td><%=name2 %></td>
+  	<td><%=title2 %></td>
+  	<td><%=filename2 %></td>
+  	<td><img src="../upload/<%=filename2 %>"></td>
+  </tr>
+  <tr>
+  	<td><%=name3 %></td>
+  	<td><%=title3 %></td>
+  	<td><%=filename3 %></td>
+  	<td><img src="../upload/<%=filename3 %>"></td>
+  </tr>
+  <%-- <%
+  	out.print("<tr><td>" + name1 + "</td>");
+  	out.print("<td>" + title1 + "</td>");
+  	out.print("<td>" + filename1 + "</td></tr>");
+  	
+  	out.print("<tr><td>" + name2 + "</td>");
+  	out.print("<td>" + title2 + "</td>");
+  	out.print("<td>" + filename2 + "</td></tr>");
+  	
+  	out.print("<tr><td>" + name3 + "</td>");
+  	out.print("<td>" + title3 + "</td>");
+  	out.print("<td>" + filename3 + "</td></tr>");
+
+  %> --%>
+
 </table>

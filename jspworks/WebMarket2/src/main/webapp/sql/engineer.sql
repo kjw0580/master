@@ -5,7 +5,8 @@ CREATE TABLE engineer(
 	name VARCHAR(20) NOT NULL
 );
 
---자료 입력
-INSERT INTO engineer (eid, passwd, name) VALUES (11, 'm1234', 'Bill');
+-- 자료 입력
+INSERT INTO engineer(eid, passwd, name)
+VALUES (11, 'm1234','Bill');
 
 SELECT * FROM engineer;

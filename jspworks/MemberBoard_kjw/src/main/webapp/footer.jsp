@@ -8,7 +8,7 @@
 </head>
 <body>
 	<footer class="py-5 mt-auto" style="background-color: #85586F">
-		<p style="margin-right:50px;">&copy; Full Stack Software Engineer : Hi-Media
+		<p style="margin-left:50px;">&copy; Full Stack Software Engineer : Hi-Media
 	</footer>
 </body>
 </html>

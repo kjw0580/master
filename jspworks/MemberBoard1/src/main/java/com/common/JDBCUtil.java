@@ -7,10 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCUtil {
-	private static String driverClass = "oracle.jdbc.OracleDriver";
-	private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static String username = "c##jweb";
-	private static String password = "54321";
+	private static String driverClass = "com.mysql.cj.jdbc.Driver";
+	private static String url 
+			= "jdbc:mysql://localhost:3306/"
+			        + "jspdb?serverTimezone=Asia/Seoul";
+	private static String username = "root";
+	private static String password = "12345";
 	
 	//DB 연결 메소드
 	public static Connection getConnection() {

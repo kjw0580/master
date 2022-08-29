@@ -2,15 +2,21 @@ package com.model;
 
 import java.io.Serializable;
 
+//자료형(Value Object)
 public class Board implements Serializable{
-	private int num; //번호
-	private String name; //글쓴이
-	private String subject; //제목
-	private String content; //내용
-	private String writeDate; //작성일
-	private int hit; //조회수
-	private String id; //회원아이디
 	
+	private static final long serialVersionUID = 13L;
+	
+	//필드(멤버변수)
+	private int num;            //번호
+	private String name;        //글쓴이
+	private String subject;     //제목
+	private String content;     //내용
+	private String writeDate;   //작성일
+	private int hit;            //조회수
+	private String id;          //회원아이디
+	
+	//getter, setter
 	public int getNum() {
 		return num;
 	}

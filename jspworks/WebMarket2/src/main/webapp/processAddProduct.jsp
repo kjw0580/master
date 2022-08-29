@@ -2,15 +2,13 @@
 <%@ page import="java.util.Enumeration"%>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@ page import="com.oreilly.servlet.MultipartRequest"%>
-<%@ page import="vo.Product"%>
-<%@ page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="./dbconn.jsp" %>
+<%@ include file="./dbconn.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8"); //한글 인코딩
 	//파일의 경로
-	String realFolder = "C:/master/jspworks/WebMarket2/src/main/webapp/upload";
+	String realFolder = "C:/dev/jspworks/WebMarket2/src/main/webapp/upload/";
 	int maxSize = 5 * 1024 * 1024; //최대용량 5MB
 	String encType = "utf-8";
 	
@@ -28,16 +26,6 @@
 	String unitsInStock = multi.getParameter("unitsInStock");
 	String condition = multi.getParameter("condition");
 	
-	/*//폼의 자료 수집(가져옴)
-	String productId = request.getParameter("productId");
-	String pname = request.getParameter("pname");
-	String unitPrice = request.getParameter("unitPrice");
-	String description = request.getParameter("description");
-	String manufacturer = request.getParameter("manufacturer");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String condition = request.getParameter("condition");*/
- 
 	//숫자 자료형 변환
 	int price;
 	if(unitPrice.isEmpty()){
@@ -60,7 +48,7 @@
 
 	//dao 상품 추가
 	PreparedStatement pstmt = null;
-	String sql = "INSERT INTO product VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	String sql = "INSERT INTO product VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, productId);
 	pstmt.setString(2, pname);
@@ -71,14 +59,12 @@
 	pstmt.setLong(7, stock);
 	pstmt.setString(8, condition);
 	pstmt.setString(9, productImage);
-	pstmt.executeUpdate();
+	pstmt.executeUpdate();  //실행
 	
-	if(pstmt != null){
+	if(pstmt != null)
 		pstmt.close();
-	}
-	if(conn != null){
+	if(conn != null)
 		conn.close();
-	}
 	
 	//페이지 이동
 	response.sendRedirect("./products.jsp");

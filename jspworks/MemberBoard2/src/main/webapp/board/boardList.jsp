@@ -16,6 +16,7 @@
 			<h1>Board</h1>
 		</div>
 		<div>
+			<%-- <p>게시글 총 수: <c:out value="${total}"/> --%>
 			<table class="tbl_list">
 				<thead>
 					<tr>
@@ -30,11 +31,36 @@
 						<td><c:out value="${board.memberId}" /></td>
 						<td><fmt:formatDate value="${board.regDate}" 
 						     pattern="yyyy-MM-dd hh:mm:ss"/></td>
-						<td><c:out value="${board.hit}" /> </td>
+						<td><c:out value="${board.hit }"/></td>
 					</tr>
 				</c:forEach>
 				</tbody>
 			</table>
+			<div style="margin-top:10px">
+				<!-- 이전 버튼 -->
+				<c:if test="${startPage > 1}">
+					<a href="/boardList.do?pageNum=<c:out value='${startPage-1}'/>">이전</a>
+				</c:if>
+				<c:if test="${startPage <= 1}">
+					<a href="/boardList.do?pageNum=<c:out value='${startPage}'/>">이전</a>
+				</c:if>
+				
+				<c:forEach var="i" begin="1" end="${endPage}">
+					<c:if test="${currentPage eq i}">
+						<a href="/boardList.do?pageNum=<c:out value='${i}'/>"><b><c:out value="${i}"/></b></a>
+					</c:if>
+					<c:if test="${currentPage ne i}">
+						<a href="/boardList.do?pageNum=<c:out value='${i}'/>"><c:out value="${i}"/></a>
+					</c:if>
+				</c:forEach>
+				<!-- 다음 버튼  -->
+				<c:if test="${endPage > startPage}">
+				<a href="/boardList.do?pageNum=<c:out value='${startPage+1}'/>">다음</a>
+				</c:if>
+				<c:if test="${endPage <= startPage}">
+				<a href="/boardList.do?pageNum=<c:out value='${endPage}'/>">다음</a>
+				</c:if>
+			</div>
 			<div class="btnWrite">
 				<a href="./writeForm.do"><button type="button">글쓰기</button></a>
 			</div>

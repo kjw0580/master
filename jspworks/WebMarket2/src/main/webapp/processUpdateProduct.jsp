@@ -2,15 +2,13 @@
 <%@ page import="java.util.Enumeration"%>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@ page import="com.oreilly.servlet.MultipartRequest"%>
-<%@ page import="vo.Product"%>
-<%@ page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="./dbconn.jsp" %>
+<%@ include file="./dbconn.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8"); //한글 인코딩
 	//파일의 경로
-	String realFolder = "C:/master/jspworks/WebMarket2/src/main/webapp/upload";
+	String realFolder = "C:/dev/jspworks/WebMarket2/src/main/webapp/upload/";
 	int maxSize = 5 * 1024 * 1024; //최대용량 5MB
 	String encType = "utf-8";
 	
@@ -28,16 +26,6 @@
 	String unitsInStock = multi.getParameter("unitsInStock");
 	String condition = multi.getParameter("condition");
 	
-	/*//폼의 자료 수집(가져옴)
-	String productId = request.getParameter("productId");
-	String pname = request.getParameter("pname");
-	String unitPrice = request.getParameter("unitPrice");
-	String description = request.getParameter("description");
-	String manufacturer = request.getParameter("manufacturer");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String condition = request.getParameter("condition");*/
- 
 	//숫자 자료형 변환
 	int price;
 	if(unitPrice.isEmpty()){
@@ -58,25 +46,24 @@
 	String fname = (String)files.nextElement(); //파일 이름
 	String productImage = multi.getFilesystemName(fname); //이미지 파일
 
-	//dao 상품 추가
+	//수정 처리
 	PreparedStatement pstmt = null;
-	
 	if(productImage != null){
-	String sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_category=?,"
-			+ "p_manufacturer=?, p_unitsInStock=?, p_condition=?, p_productImage=? WHERE p_id=?";
-	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, pname);
-	pstmt.setInt(2, price);
-	pstmt.setString(3, description);
-	pstmt.setString(4, manufacturer);
-	pstmt.setString(5, category);
-	pstmt.setLong(6, stock);
-	pstmt.setString(7, condition);
-	pstmt.setString(8, productImage);
-	pstmt.setString(9, productId);
-	pstmt.executeUpdate();
+		String sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?," 
+				+ "p_category=?, p_unitsInStock=?, p_condition=?, p_productImage=? WHERE p_id=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, pname);
+		pstmt.setInt(2, price);
+		pstmt.setString(3, description);
+		pstmt.setString(4, manufacturer);
+		pstmt.setString(5, category);
+		pstmt.setLong(6, stock);
+		pstmt.setString(7, condition);
+		pstmt.setString(8, productImage);
+		pstmt.setString(9, productId);
+		pstmt.executeUpdate();  //실행
 	}else{
-		String sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?,"
+		String sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, " 
 				+ "p_category=?, p_unitsInStock=?, p_condition=? WHERE p_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, pname);
@@ -87,16 +74,15 @@
 		pstmt.setLong(6, stock);
 		pstmt.setString(7, condition);
 		pstmt.setString(8, productId);
-		pstmt.executeUpdate();
-	}
-	if(pstmt != null){
-		pstmt.close();
-	}
-	if(conn != null){
-		conn.close();
+		pstmt.executeUpdate();  //실행
 	}
 	
+	if(pstmt != null)
+		pstmt.close();
+	if(conn != null)
+		conn.close();
+	
 	//페이지 이동
-	response.sendRedirect("./products.jsp");
+	response.sendRedirect("./editProduct.jsp?edit=update");
 	
 %>

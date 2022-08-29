@@ -6,11 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JDBCUtil {
+public class JDBCUtil{
 	private static String driverClass = "com.mysql.cj.jdbc.Driver";
 	private static String url 
 			= "jdbc:mysql://localhost:3306/"
-			        + "jspdb?serverTimezone=Asia/Seoul";
+			        + "jspdb?useUnicode=true&serverTimezone=Asia/Seoul";
 	private static String username = "root";
 	private static String password = "12345";
 	

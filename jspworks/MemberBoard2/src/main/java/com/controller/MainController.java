@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 
 import com.repository.Board;
 import com.repository.BoardDAO;
-import com.repository.BoardDAO3;
 import com.repository.Member;
 import com.repository.MemberDAO;
 
@@ -147,12 +146,38 @@ public class MainController extends HttpServlet {
 			request.setAttribute("msg", "update"); 
 			nextPage = "/memberResult.jsp";
 		}else if(command.equals("/boardList.do")) { //게시판 목록 페이지 요청
+			String pageNum = request.getParameter("pageNum");
+			if(pageNum == null) {
+				pageNum = "1";
+			}
+			
+			//현재 페이지
+			int currentPage = Integer.parseInt(pageNum);
+			
+			int pageSize = 10;
+			
+			// 1페이지 1 , 2페이지 11, 3페이지 21
+			int startRow = (currentPage-1)*pageSize + 1;
+			
+			//게시글의 총 개수
+			int total = boardDAO.getBoardCount();
+			
+			//시작페이지
+			int startPage = startRow / pageSize +1;
+			
+			//마지막 페이지
+			int endPage = (int)Math.ceil((double)total/pageSize);
+			
 			
 			//게시글 목록 db 처리
-			ArrayList<Board> boardList = boardDAO.getListAll();
+			ArrayList<Board> boardList = boardDAO.getListAll(startRow, pageSize);
 			
 			//model - 데이터
 			request.setAttribute("boardList", boardList);
+			request.setAttribute("total", total);
+			request.setAttribute("endPage", endPage);
+			request.setAttribute("currentPage", currentPage);
+			request.setAttribute("startPage", startPage);
 			
 			nextPage = "/board/boardList.jsp";
 		}else if(command.equals("/writeForm.do")) { //글쓰기 페이지 요청
@@ -176,9 +201,9 @@ public class MainController extends HttpServlet {
 			int bnum = Integer.parseInt(request.getParameter("bnum"));
 			//조회수 처리
 			boardDAO.updateHit(bnum);
-			// 상세보기 처리
+			//상세보기 처리
 			Board board = boardDAO.getBoard(bnum);
-		
+			
 			request.setAttribute("board", board);  //model - board
 			nextPage = "/board/boardView.jsp";  //이동 페이지
 		}else if(command.equals("/deleteBoard.do")) {

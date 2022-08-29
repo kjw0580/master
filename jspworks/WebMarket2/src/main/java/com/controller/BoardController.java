@@ -18,51 +18,54 @@ import com.model.BoardDAO;
 
 @WebServlet("*.do")
 public class BoardController extends HttpServlet {
-	
-	private static final long serialVersionUID = 21L;
+	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html; charset=utf-8");
 		
-		String uri = request.getRequestURI();
-		System.out.println(uri);  //경로(주소 -path) 정보
+		response.setContentType("text/html; charset=utf-8"); //문서 유형(html/text) 응답
+		request.setCharacterEncoding("utf-8");  //한글 인코딩 요청
 		
-		String command = uri.substring(uri.lastIndexOf("/"));  //주소 문자열 추출
-		System.out.println(uri.lastIndexOf("/"));
+		String uri = request.getRequestURI();  //도메인 주소의 경로(path)
+		System.out.println(uri);   // - /main.jsp
+		
+		//substring(index);  index 이후 모든 문자열 추출
+		String command = uri.substring(uri.lastIndexOf("/"));   // - /main.jsp
 		System.out.println(command);
 		
-		String nextPage = null;  //jsp 페이지
-		HttpSession session = request.getSession(); //세션 객체 생성
+		String nextPage = null;
+		BoardDAO dao = BoardDAO.getInstance();  //클래스 이름으로 직접 접근
+		HttpSession session = request.getSession();  //세션 객체 얻기
 		
-		BoardDAO dao = BoardDAO.getInstance();  //dao 객체 생성
-		
-		if(command.equals("/boardListAction.do")) {  //게시글 목록 요청
+		if(command.equals("/boardListAction.do")) { //목록 보기 요청
 			ArrayList<Board> boardList = dao.getBoardList();
+			//model 보내줌 - "boardList"
 			request.setAttribute("boardList", boardList);
+			//view 
 			nextPage = "/board/boardList.jsp";
-		}else if(command.equals("/boardWriteForm.do")) { //새글 폼 페이지
-			String id = (String)session.getAttribute("sessionId");
-			String name = dao.getNameByLogin(id);   //인증된 이름 함수 호출
-			request.setAttribute("name", name);     //model - "name" 생성
+		}else if(command.equals("/boardWriteForm.do")) { //글쓰기 폼 페이지 요청
+			String id = (String) session.getAttribute("sessionId"); //sessionId 가져옴
+			String name = dao.getNameByLogin(id);  //인증된 이름 가져옴
+			
+			//model - name
+			request.setAttribute("name", name);
 			nextPage = "/board/boardWriteForm.jsp";
-		}else if(command.equals("/boardWriteAction.do")) {  //글쓰기 처리 요청
-			//자료 전달
+		}else if(command.equals("/boardWriteAction.do")) { //글쓰기 처리 요청
+			//폼 데이터 수집
 			String id = request.getParameter("id");
 			String name = request.getParameter("name");
 			String subject = request.getParameter("subject");
 			String content = request.getParameter("content");
 			
-			//현재 시간 포맷 설정
+			//작성한 일시
+			Date date = new Date();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd(HH:mm:ss)");
-			Date now = new Date();
-			String writeDate = formatter.format(now);
+			String writeDate = formatter.format(date);
 			
-			//Board 객체 생성
+			//객체 생성 및 데이터 셋
 			Board board = new Board();
 			board.setId(id);
 			board.setName(name);
@@ -70,41 +73,44 @@ public class BoardController extends HttpServlet {
 			board.setContent(content);
 			board.setWriteDate(writeDate);
 			
-			//글쓰기 처리
 			dao.insertBoard(board);
-			//view 이동
+			//view
 			nextPage = "/boardListAction.do";
-		}else if(command.equals("/boardView.do")) { //게시글 상세 보기
-			int num = Integer.parseInt(request.getParameter("num"));
-			// 조회수
-			dao.updateHit(num);
-			// 상세 보기
-			Board board = dao.getBoard(num);
-			//model and view
+		}else if(command.equals("/boardView.do")) { //상세 보기 페이지 요청
+			String num = request.getParameter("num");
+			//조회수
+			dao.updateHit("num");
+			//상세 보기
+			Board board = dao.getBoard(Integer.parseInt(num));  //num은 숫자형으로 변환
+			//model - board
 			request.setAttribute("board", board);
 			nextPage = "/board/boardView.jsp";
-		}else if(command.equals("/boardDeleteAction.do")) {
-			int num = Integer.parseInt(request.getParameter("num"));
+		}else if(command.equals("/boardDeleteAction.do")) {  //게시글 삭제
+			String num = request.getParameter("num");
 			
-			dao.deleteBoard(num);
-			nextPage = "/boardListAction.do";
-		}else if(command.equals("/boardUpdateAction.do")) {
-			//자료 전달
-			int num = Integer.parseInt(request.getParameter("num"));
+				dao.getBoard(Integer.parseInt(num));
+				
+				nextPage = "/boardListAction.do";
+		}else if(command.equals("/boardUpdateAction.do")) { //게시글 업데이트
+			//입력 폼 데이터 수집
 			String subject = request.getParameter("subject");
 			String content = request.getParameter("content");
+			String num = request.getParameter("num"); //hidden 속성으로 받음
 			
-			//Board 객체 생성
+			//board 객체 생성
 			Board board = new Board();
-			board.setNum(num);   //글번호(기본키)가 반드시 필요함
 			board.setSubject(subject);
-			board.setContent(content);
+			board.setSubject(content);
+			board.setNum(Integer.parseInt(num));
 			
 			dao.updateBoard(board);
+			
 			nextPage = "/boardListAction.do";
 		}
 		
+		//nextPage를 포워딩 함
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);
+		
 	}
 }

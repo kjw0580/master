@@ -17,8 +17,8 @@ public class BoardDAO {
 	//게시글 쓰기
 	public void insertBoard(Board board) {
 		conn = JDBCUtil.getConnection();
-		String sql = "INSERT INTO t_board(bnum, title, content, memberId)" 
-				+ " VALUES (b_seq.nextval, ?, ?, ?)";
+		String sql = "INSERT INTO t_board(title, content, memberId)" 
+				+ " VALUES (?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle()); //폼에 입력 데이터를 db에 저장
@@ -31,15 +31,37 @@ public class BoardDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}
-
-	//게시글 목록 보기
-	public ArrayList<Board> getListAll(){
+	
+	//게시글 총 개수
+	public int getBoardCount(){
+		int total = 0;
+		try {
+			conn = JDBCUtil.getConnection();
+			String sql = "select count(*) total from t_board";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				total = rs.getInt("total");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+				
+		return total;
+	}
+	
+	//게시글 목록 보기(페이징)
+	public ArrayList<Board> getListAll(int startRow, int pageSize){
 		ArrayList<Board> boardList = new ArrayList<>();
 		
 		try {
 			conn = JDBCUtil.getConnection();
-			String sql = "SELECT * FROM t_board ORDER BY bnum DESC";
+			String sql = "SELECT * FROM t_board ORDER BY bnum DESC LIMIT ?, ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,  startRow-1);
+			pstmt.setInt(2, pageSize);
 			rs = pstmt.executeQuery();
 			while(rs.next()) { //반환 자료가 있는 동안
 				Board board = new Board();

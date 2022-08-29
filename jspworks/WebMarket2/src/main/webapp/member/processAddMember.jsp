@@ -36,10 +36,10 @@
 		password = "12345"
 	/>
 	
-	<!-- update 쿼리문 작성 -->
+	<!-- 데이터 입력 -->
 	<sql:update dataSource="${dataSource}" var="resultSet">
-		UPDATE member SET password=?, name=?, gender=?, birth=?, mail=?,
-			phone=?, address=? WHERE id=?
+		INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+		<sql:param value="<%=id %>" />
 		<sql:param value="<%=password %>" />
 		<sql:param value="<%=name %>" />
 		<sql:param value="<%=gender %>" />
@@ -47,11 +47,13 @@
 		<sql:param value="<%=mail %>" />
 		<sql:param value="<%=phone %>" />
 		<sql:param value="<%=address %>" />
-		<sql:param value="<%=id %>" />
+		<sql:param value="<%=timestamp %>" />
 	</sql:update>
 	
 	<!-- 페이지 이동 -->
 	<c:if test="${resultSet >=1 }">
-		<c:redirect url="resultMember.jsp?msg=0" />
+		<c:redirect url="resultMember.jsp?msg=1" />
 	</c:if>
 </body>
+
+

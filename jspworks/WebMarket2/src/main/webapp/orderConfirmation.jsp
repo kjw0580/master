@@ -66,12 +66,16 @@
 			<div class="col-4" align="right">
 				<p><em>배송일: <%=shipping_shippingDate %></em>
 			</div>
+		</div>
+		<div>
 			<table class="table table-hover">
 				<tr>
-					<th>상품</th><th>가격</th><th>수량</th><th>소계</th><th>비고</th>
+					<th class="text-center">상품</th>
+					<th class="text-center">수량</th>
+					<th class="text-center">가격</th>
+					<th class="text-center">소계</th>
 				</tr>
 				<%
-					//장바구니 리스트 (세션 가져옴-장바구니 품목 전체를 받음)
 					ArrayList<Product> cartList = (ArrayList<Product>)session.getAttribute("cartlist");
 					if(cartList == null){
 						cartList = new ArrayList<>();
@@ -83,22 +87,22 @@
 						sum += total;   //총액
 				%>
 				<tr>
-					<td class="text-center"><%=product.getProductId() %> - <%=product.getPname() %></td>
-					<td class="text-center"><%=product.getUnitPrice() %></td>
+					<td class="text-center"><%=product.getPname() %></td>
 					<td class="text-center"><%=product.getQuantity() %></td>
+					<td class="text-center"><%=product.getUnitPrice() %></td>
 					<td class="text-center"><%=total %></td>
 				</tr>
 				<% } %>
 				<tr>
-					<th></th>
-					<th></th>
-					<th class="text-right"><strong>총액: </strong></th>
-					<th class="text-center text-danger"><strong><%=sum %></strong></th>
-					<th></th>
+					<td></td>
+					<td></td>
+					<td class="text-right"><strong>총액: </strong></td>
+					<td class="text-center text-danger"><strong><%=sum %></strong></td>
 				</tr>
 			</table>
 			<a href="./shippingInfo.jsp?cartId=<%=shipping_cartId %>" class="btn btn-secondary"> 이전 </a>
 			<a href="./thanksCustomer.jsp" class="btn btn-success"> 주문 완료 </a>
+			<a href="./checkOutCancelled.jsp" class="btn btn-secondary"> 취소 </a>
 		</div>
 	</div>
 	<jsp:include page="./footer.jsp" />

@@ -7,11 +7,11 @@ import com.cloud.repository.UserDAO;
 import com.cloud.repository.UserVO;
 
 @Service
-public class UserServiceImpl implements UserService{
-	
+public class UserServiceImpl implements UserService {
+
 	@Autowired
 	private UserDAO dao;
-
+	
 	@Override
 	public boolean login(UserVO vo) {
 		return dao.login(vo);

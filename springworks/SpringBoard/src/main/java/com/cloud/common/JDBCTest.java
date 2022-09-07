@@ -5,8 +5,8 @@ import java.sql.Connection;
 public class JDBCTest {
 
 	public static void main(String[] args) {
-		Connection conn = JDBCUtil.getConnention();
-		System.out.println(conn + " ì—°ê²° ì™„ë£Œ");
+		Connection conn = JDBCUtil.getConnection();
+		System.out.println(conn + " ¿¬°á °´Ã¼ »ý¼º");
 	}
 
 }

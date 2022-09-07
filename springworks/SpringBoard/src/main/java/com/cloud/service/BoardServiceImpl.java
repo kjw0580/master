@@ -8,39 +8,39 @@ import org.springframework.stereotype.Service;
 import com.cloud.repository.BoardDAO;
 import com.cloud.repository.BoardVO;
 
-@Service("boardService")
+@Service
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
-	private BoardDAO dao;
-
+	private BoardDAO dao;  //BoardDAO를 주입받아 객체 생성
+	
 	@Override
-	public void insert(BoardVO vo) {  //글쓰기
+	public void insertBoard(BoardVO vo) {  //글쓰기
 		dao.insertBoard(vo);
 	}
 
-	@Override 
-	public List<BoardVO> getBoardList() {  //글 목록
+	@Override
+	public List<BoardVO> getBoardList() {  //목록 보기 서비스
 		return dao.getBoardList();
 	}
 
 	@Override
-	public BoardVO getBoard(int bno) { //상세 보기
+	public BoardVO getBoard(int bno) { //글 상세 보기
 		return dao.getBoard(bno);
 	}
 
 	@Override
-	public void delete(BoardVO vo) { //삭제
+	public void deleteBoard(BoardVO vo) { //글 삭제
 		dao.deleteBoard(vo);
 	}
 
 	@Override
-	public void update(BoardVO vo) {  //수정
-		dao.updateBoard(vo);
+	public void updateBoard(BoardVO vo) { //글 수정
+		dao.updateBoard(vo); 
 	}
 
 	@Override
-	public void updateCount(int bno) {  //조회수
+	public void updateCount(int bno) {  //조회수 증가
 		dao.updateCount(bno);
 	}
 }

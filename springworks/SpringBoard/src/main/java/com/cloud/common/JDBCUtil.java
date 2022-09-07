@@ -4,73 +4,64 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class JDBCUtil {
-	
 	private static String driverClass = "oracle.jdbc.OracleDriver";
 	private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static String username = "SYSTEM";
-	private static String password = "12345";
+	private static String username = "c##jweb";
+	private static String password = "54321";
 	
-    //DB ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
-	public static Connection getConnention() {
+	//DB ¿¬°á ¸Þ¼Òµå
+	public static Connection getConnection() {
 		try {
 			Class.forName(driverClass);
 			return DriverManager.getConnection(url, username, password);
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	//DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+	//DB ¿¬°á Á¾·á ¸Þ¼Òµå
 	public static void close(Connection conn, PreparedStatement pstmt) {
 		if(pstmt != null) {
 			try {
 				pstmt.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
-			}finally {
-				pstmt = null;
 			}
 		}
-		
 		if(conn != null) {
 			try {
 				conn.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
-			}finally {
-				conn = null;
 			}
 		}
 	}
 	
-	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ResultSetï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½)
+	//DB ¿¬°á Á¾·á ¸Þ¼Òµå(ResultSetÀÌ ÀÖ´Â °æ¿ì)
 	public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 		if(rs != null) {
 			try {
 				rs.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		if(pstmt != null) {
 			try {
 				pstmt.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
-			}finally {
-				pstmt = null;
 			}
 		}
 		if(conn != null) {
 			try {
 				conn.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
-			}finally {
-				conn = null;
 			}
 		}
 	}

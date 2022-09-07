@@ -4,7 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,38 +20,35 @@ import com.cloud.service.BoardService;
 public class BoardController {
 	
 	@Autowired
-	private BoardService service;
+	private BoardService service;  //서비스 객체 생성
 	
-	@RequestMapping("/boardList")
-	public String getBoardList(Model model, HttpSession session) {  //게시글 목록 요청
+	@RequestMapping(value="/boardList", method=RequestMethod.GET)
+	public String getBoardList(Model model) {
 		List<BoardVO> boardList = service.getBoardList();
-		String id = (String)session.getAttribute("sessionId");
-		
-		model.addAttribute("boardList", boardList); //model-"boardList"
-		model.addAttribute("id", id);
+		model.addAttribute("boardList", boardList); //jsp쪽으로 리스트 보냄
 		return "boardList";
 	}
 	
-	@RequestMapping("/boardView")
-	public String getBoard(int bno, Model model) { //상세 보기 요청
-		service.updateCount(bno);  //조회수 증가
-		BoardVO board = service.getBoard(bno);  //상세 보기 처리
-		model.addAttribute("board", board); //model-"board"
-		return "boardView";
-	}
-	
 	@RequestMapping(value="/insertBoard", method=RequestMethod.GET)
-	public String insertBoard() {  //글쓰기 폼 페이지 요청
+	public String insertBoardView() {  //글쓰기 폼 페이지 요청
 		return "insertBoard";
 	}
 	
+	@RequestMapping(value="/insertBoard", method=RequestMethod.POST)
+	public String insertBoard(BoardVO vo, HttpServletRequest request) throws UnsupportedEncodingException {  //글쓰기 처리 요청
+		//파라미터의 객체를 커맨드 객체라고 함. (폼 데이터를 전달받고 세팅)
+		//request.setCharacterEncoding("utf-8");  //web.xml의 Filter로 처리함
+		service.insertBoard(vo);
+		return "redirect:boardList";
+	}
+	
 	/*@RequestMapping(value="/insertBoard", method=RequestMethod.POST)
-	public String insertBoard(HttpServletRequest request) throws UnsupportedEncodingException {
+	public String insertBoard(HttpServletRequest request) throws UnsupportedEncodingException {  //글쓰기 폼 페이지 요청
 		//사용자 입력 정보 추출
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8"); //한글 인코딩 요청
 		
 		String title = request.getParameter("title");
-		String writer = request.getParameter("title");
+		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
 		
 		//db 연동
@@ -61,26 +57,35 @@ public class BoardController {
 		vo.setWriter(writer);
 		vo.setContent(content);
 		
-		boardService.insert(vo);
+		service.insertBoard(vo);
 		return "redirect:boardList";
 	}*/
 	
-	@RequestMapping(value="/insertBoard", method=RequestMethod.POST)
-	public String insertBoard(BoardVO vo){  //글쓰기 처리
-		//command 객체 - BoardVO -> HttpServletRequest request 대체함
-		service.insert(vo);
-		return "redirect:boardList";
+	@GetMapping("/boardView")
+	public String getBoard(int bno, Model model) { //상세보기 페이지 요청
+		service.updateCount(bno);  //조회수 증가
+		BoardVO board = service.getBoard(bno); //상세 페이지 처리
+		
+		model.addAttribute("board", board);  //jsp로 board 데이터 보냄
+		return "boardView";
 	}
 	
 	@GetMapping("/deleteBoard")
-	public String deleteBoard(BoardVO vo) {  //글 삭제 요청
-		service.delete(vo);
+	public String deleteBoard(BoardVO vo) { //글삭제 처리 요청
+		service.deleteBoard(vo);
 		return "redirect:boardList";
 	}
 	
 	@PostMapping("/updateBoard")
-	public String updateBoard(BoardVO vo) {  //글 수정 요청
-		service.update(vo);
+	public String updateBoard(BoardVO vo) { //글 수정 요청
+		service.updateBoard(vo);
 		return "redirect:boardList";
 	}
 }
+
+
+
+
+
+
+

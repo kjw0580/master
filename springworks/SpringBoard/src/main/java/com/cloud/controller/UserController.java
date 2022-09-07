@@ -13,33 +13,33 @@ import com.cloud.repository.UserVO;
 import com.cloud.service.UserService;
 
 @Controller
-public class UserController{
-
+public class UserController {
+	
 	@Autowired
 	private UserService service;
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
-	public String loginView() { //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
+	public String loginView() {  //·Î±×ÀÎ Æû ÆäÀÌÁö ¿äÃ»
 		return "login";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(UserVO vo, HttpSession session, Model model) { //ï¿½Î±ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½Ã»
+	public String login(UserVO vo, HttpSession session, Model model) {  //·Î±×ÀÎ Ã³¸® ¿äÃ»
 		boolean result = service.login(vo);
-		System.out.println(result);
-		if(result==true) {
-			session.setAttribute("sessionId", vo.getId()); //ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ï¿½
+		
+		if(result) { //result == true
+			session.setAttribute("sessionId", vo.getId()); //id ¼¼¼Ç ¹ß±Þ
 			return "redirect:boardList";
-		}else {
-			int error = 1;
-			model.addAttribute("error", error);
+		}else { //result == false
+			int error = 1;  //¿¡·¯
+			model.addAttribute("error", error); //model µ¥ÀÌÅÍ - error
 			return "login";
 		}
 	}
 	
 	@GetMapping("/logout")
-	public String logout(HttpSession session) { 
-		session.invalidate(); 
+	public String logout(HttpSession session) { //·Î±× ¾Æ¿ô Ã³¸®
+		session.invalidate();  //¼¼¼Ç »èÁ¦
 		return "index";
 	}
 }

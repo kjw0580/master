@@ -11,17 +11,20 @@ import com.cloud.common.JDBCUtil;
 
 @Repository
 public class UserDAO {
-	private Connection conn = null;
-	private PreparedStatement pstmt = null;
-	private ResultSet rs = null;
+
+	//jdbc 관련 변수
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	
-	private final String LOGIN = 
-			"SELECT * FROM users WHERE id = ? and passwd = ?";
+	//SQL 상수 선언
+	private final String LOGIN =
+			"SELECT * FROM users WHERE id=? and passwd=?";
 	
-	//로그인 처리
+	//로그인 체크
 	public boolean login(UserVO vo) {
+		conn = JDBCUtil.getConnection();
 		try {
-			conn = JDBCUtil.getConnention();
 			pstmt = conn.prepareStatement(LOGIN);
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPasswd());
@@ -31,9 +34,15 @@ public class UserDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			JDBCUtil.close(conn, pstmt, rs);
 		}
 		return false;
 	}
 }
+
+
+
+
+
+
+
+

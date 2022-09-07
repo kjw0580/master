@@ -8,11 +8,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.log4j.Log4j;
 
+@Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@Log4j
 public class SampleTest {
-
+	
 	@Autowired
 	private Restaurant restaurant;
 	
@@ -20,12 +20,15 @@ public class SampleTest {
 	private Hotel hotel;
 	
 	@Test
-	public void testRestaurant() {
+	public void test() {
+		System.out.println("test1....");
 		log.info(restaurant);
 	}
 	
 	@Test
 	public void testHotel() {
+		System.out.println("test hotel....");
 		log.info(hotel);
 	}
+	
 }

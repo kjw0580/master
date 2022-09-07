@@ -5,19 +5,22 @@ import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-//생성자 주입 - @AllArgsConstructor
+//생성자 주입
 //Setter 주입
-//필드 주입 - Autowired
+//Autowired -필드 위 주입
 
-@AllArgsConstructor
-@Data
+//@AllArgsConstructor  //생성자 주입
 @Component
+@Data
 public class Restaurant {
-
+	
 	//@Autowired
-	//@Setter(onMethod_ = @Autowired)
-	private Chef chef;
+	@Setter(onMethod_ = @Autowired)  //setter 인젝션
+	private Chef chef;  //new Chef()
+	
+	/*public Restaurant(Chef chef) { //자바 방식의 생성자 만들기
+		this.chef = chef;
+	}*/
 }

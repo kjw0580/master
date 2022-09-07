@@ -4,46 +4,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 등록</title>
+<title>Welcome~</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 <script type="text/javascript">
+	function checkForm(){
+		//alert("글쓰기");
+		let form = document.newWrite;  //폼 이름
+		let title = form.title.value;  //제목 입력값
+		let writer = form.writer.value; //이름 입력값
+		let content = form.content.value; //내용 입력값
+		
+		if(title == ""){
+			alert("제목을 입력해주세요.");
+			form.title.focus();
+			return false;
+		}
+		if(writer == ""){
+			alert("이름을 입력해주세요.");
+			form.writer.focus();
+			return false;
+		}
+		if(content == ""){
+			alert("내용을 입력해주세요.");
+			form.content.focus();
+			return false;
+		}
+		
+	}
 
-//고정우
-function checkForm(){
-	let form = document.boardForm;
-	
-	if(form.title.value == ""){
-		alert("제목을 입력해 주세요")
-		form.title.focus();
-		return false;
-	}
-	
-	if(form.writer.value == ""){
-		alert("작성자를 입력해 주세요")
-		form.writer.focus();
-		return false;
-	}
-	
-	if(form.content.value == ""){
-		alert("내용을 입력해 주세요")
-		form.content.focus();
-		return false;
-	}
-}
-	
 </script>
 </head>
 <body>
 	<div id="container">
-		<section id="register">
-			<h2>글 등록</h2>
-			<hr>
+		<section id="list">
+			<h2>글쓰기</h2>
 			<form action="/insertBoard" method="post" 
-			      onsubmit="return checkForm()" name="boardForm">
+				  onsubmit="return checkForm()" name="newWrite">
 				<table class="tbl_reg">
 					<tr>
-						<td width="100">제목</td>
-						<td align="left"><input type="text" name="title" size="50"></td>
+						<td>제목</td>
+						<td><input type="text" name="title" placeholder="Title"></td>
 					</tr>
 					<tr>
 						<td>작성자</td>
@@ -51,12 +51,15 @@ function checkForm(){
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td><textarea name="content" cols="50" rows="10"></textarea></td>
+						<td>
+							<textarea name="content" cols="50" rows="10"
+							          placeholder="Content"></textarea>
+						</td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center">
-						    <input type="submit" value="등록">
-						    <a href="/boardList"><input type="button" value="목록"></a>
+						<td colspan="2">
+							<input type="submit" value="등록">
+							<a href="/boardList"><input type="button" value="목록"></a>
 						</td>
 					</tr>
 				</table>

@@ -6,19 +6,26 @@ import com.cloud.domain.MemberVO;
 
 public interface MemberMapper {
 	
-	//회원 상세 보기
+	//ȸ�� �� ����
 	public MemberVO read(String userid);
 	
-	//회원 가입
+	//ȸ�� ����
 	public void insertMember(MemberVO member);
 	
-	//회원 목록
+	//ȸ�� ���
 	public List<MemberVO> getMemberList();
 	
-	//회원 탈퇴
+	//ȸ�� Ż��
 	public void deleteMember(MemberVO member);
 	
-	//회원 수정
+	//ȸ�� ����
 	public void updateMember(MemberVO member);
+	
+	public int checkID(String userid);
 
 }
+
+
+
+
+

@@ -28,7 +28,7 @@ CREATE TABLE tbl_member_auth(
 );
 
 --관리자 권한 변경
-UPDATE tbl_member_auth SET auth='ROLE_ADMIN' WHERE userid='apple';
+UPDATE tbl_member_auth SET auth='ROLE_ADMIN' WHERE userid='admin';
 
 -- 외부 조인 : 특정 member의 회원정보와 권한 정보를 출력
 SELECT mem.userid, userpw, username, enabled, regdate, updatedate, auth FROM tbl_member mem
@@ -40,7 +40,7 @@ WHERE mem.userid = 'admin90';
 SELECT * FROM tbl_member;
 SELECT * FROM tbl_member_auth;
 
--- DROP TABLE tbl_member;
--- DROP TABLE tbl_member_auth;
+DROP TABLE tbl_member;
+DROP TABLE tbl_member_auth;
 
 COMMIT;

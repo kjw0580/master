@@ -18,27 +18,27 @@
          </div>
             <table class="tbl_list">
                <thead>
-               	<tr>
-               		<th>번호</th>
-               		<th>아이디</th>
-               		<!-- <th>비밀번호</th> -->
-               		<th>이름</th>
-               		<th>가입일</th>
-               		<th>이메일</th>
-               	</tr>
-               	</thead>
-               	<tbody>
-               	<c:forEach items="${memberList}" var="member" varStatus="status">
-               	 <tr>
-               	 	<td><c:out value="${status.count}"/></td>
-               	 	<td><a href="/member/memberView?userid=<c:out value="${member.userid}" />"><c:out value="${member.userid}" /></a></td>
-               	 	<%-- <td><c:out value="${member.userpw}" /></td> --%>
-               	 	<td><c:out value="${member.username}" /></td>
-               	 	<td><fmt:formatDate value="${member.regDate}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
-               	 	<td><c:out value="${member.email}" /></td>
-               	 </tr>
-               	 </c:forEach>
-               	</tbody>
+                  <tr>
+                     <th>번호</th>
+                     <th>아이디</th>
+                     <!-- <th>비밀번호</th> -->
+                     <th>이름</th>
+                     <th>가입일</th>
+                     <th>이메일</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <c:forEach items="${memberList}" var="member" varStatus="status">
+                   <tr>
+                      <td><c:out value="${status.count}"/></td>
+                      <td><a href="/member/memberView?userid=<c:out value="${member.userid}" />"><c:out value="${member.userid}" /></a></td>
+                      <%-- <td><c:out value="${member.userpw}" /></td> --%>
+                      <td><c:out value="${member.username}" /></td>
+                      <td><fmt:formatDate value="${member.regDate}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
+                      <td><c:out value="${member.email}" /></td>
+                   </tr>
+                   </c:forEach>
+                  </tbody>
             </table>
       </section>
    </div>

@@ -6,18 +6,26 @@ import com.cloud.domain.MemberVO;
 
 public interface MemberService {
 
-   //È¸¿ø °¡ÀÔ
-   public void signup(MemberVO member);
-   
-   //È¸¿ø ¸ñ·Ï
-   public List<MemberVO> getMemberList();
-   
-   //È¸¿ø »ó¼¼ º¸±â
-   public MemberVO read(String userid);
-   
-   //È¸¿ø Å»Åğ
-   public void delete(MemberVO member);
-   
-   //È¸¿ø ¼öÁ¤
-   public void update(MemberVO member);
+	//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void signup(MemberVO member);
+	
+	//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½
+	public List<MemberVO> getMemberList();
+	
+	//È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public MemberVO read(String userid);
+	
+	//È¸ï¿½ï¿½ Å»ï¿½ï¿½
+	public void delete(MemberVO member);
+	
+	//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void update(MemberVO member);
+	
+	//id ì¤‘ë³µ ì²´í¬
+	public int checkID(String userid);
 }
+
+
+
+
+

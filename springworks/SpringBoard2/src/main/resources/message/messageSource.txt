@@ -1,9 +1,9 @@
 #login.jsp
 
-message.user.login.title=ë¡œê·¸ì¸
-message.user.login.id=ì•„ì´ë””
-message.user.login.password=ë¹„ë°€ë²ˆí˜¸
-message.user.login.loginBtn=ë¡œê·¸ì¸
+message.user.login.title=·Î±×ÀÎ
+message.user.login.id=¾ÆÀÌµğ
+message.user.login.password=ºñ¹Ğ¹øÈ£
+message.user.login.loginBtn=·Î±×ÀÎ
 
-message.user.login.language.en=ì˜ì–´
-message.user.login.language.ko=í•œê¸€
+message.user.login.language.en=¿µ¾î
+message.user.login.language.ko=ÇÑ±Û

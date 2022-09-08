@@ -6,53 +6,72 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 <link rel="stylesheet" href="/resources/css/style.css">
-<script type="text/javascript">
-	/* function checkMember(event) {
+<script type="text/javascript" src="/resources/js/validation.js"></script>
+<script>
+function checkForm(){
+	let id = document.getElementById("userid");
+	let pwd1 = document.getElementById("userpw");
+	let pwd2 = document.getElementById("userpw_confirm");
+	let name = document.getElementById("username");
+	let idChkVal = document.getElementById("idCheck");
+	
+	//정규식 변수 할당
+	let regExpId = /^[a-zA-Z0-9]*$/ //영문자, 숫자만(^-시작, *-반복)
+	let regExpPwd1 = /[a-zA-Z0-9]/  //영문자, 숫자
+	let regExpPwd2 = /[~!@#$%^&*()_+/]/  //특수문자
+	let regExpPwd3 = /[ㄱ-ㅎㅏ-ㅣ가-힣]/  //한글
+	
+	if(id.value.value.length < 4 || id.value.length > 12 || !regExpId.test(id)){
+		alert("아이디는 영문자, 숫자 포함 4-12자 이하로 입력해주세요 ");
+		form.userid.focus();
+		form.userid.select();
+		return false;
+	}else if(pwd1.value.length < 8 || pwd1.value.length > 12 ||
+			!regExpPwd1.test(pwd1) || !regExpPwd2.test(pwd1) ||
+			regExpPwd3.test(pwd1)){
+		alert("비밀번호는 영문자, 숫자, 특수문자 포함 8-12자 이하로 입력해주세요 ");
+		form.userpw.focus();
+		form.userpw.select();
+		return false;
+	}else if(pwd1 != pwd2){
+		alert("비밀번호를 동일하게 입력해주세요");
+		form.userpw_confirm.focus();
+		form.userpw_confirm.select();
+		return false;
+	}else if(name == ""){
+		alert("이름을 입력해주세요");
+		form.username.focus();
+		return false;
+	}
+	
+	
+	}//checkForm()닫기
 
-	   event.preventDefault();
-
-	} */
- function checkMember(){
-   //변수 할당
-   let form = document.newWrite;     //폼 이름
-   let id = form.userid.value;    //아이디 입력값
-   let pwd1 = form.userpw.value;    //비밀번호 입력값
-   let pwd2 = form.userpw_confirm.value; //비밀번호 확인 입력값
-   let name = form.username.value;      //이름 입력값
-   
-   //정규식 변수 할당
-   let regExpId = /^[a-zA-Z0-9]*$/ //영문자, 숫자만(^-시작, *-반복)
-   let regExpPwd1 = /[a-zA-Z0-9]/  //영문자, 숫자
-   let regExpPwd2 = /[~!@#$%^&*()_+/]/  //특수문자
-   let regExpPwd3 = /[ㄱ-ㅎㅏ-ㅣ가-힣]/  //한글
-   event.preventDefault();
-   
-   if(id.length < 4 || id.length > 12 || !regExpId.test(id)){
-      alert("아이디는 영문자, 숫자 포함 4-12자 이하로 입력해주세요 ");
-      form.userid.focus();
-      form.userid.select();
-      return false;
-   }else if(pwd1.length < 8 || pwd1.length > 12 ||
-         !regExpPwd1.test(pwd1) || !regExpPwd2.test(pwd1) ||
-         regExpPwd3.test(pwd1)){
-      alert("비밀번호는 영문자, 숫자, 특수문자 포함 8-12자 이하로 입력해주세요 ");
-      form.userpw.focus();
-      form.userpw.select();
-      return false;
-   }else if(pwd1 != pwd2){
-      alert("비밀번호를 동일하게 입력해주세요");
-      form.userpw_confirm.focus();
-      form.userpw_confirm.select();
-      return false;
-   }else if(name == ""){
-      alert("이름을 입력해주세요");
-      form.username.focus();
-      return false;
-   }else{
-      form.submit();  //폼을 전송
-   }
-  
-}
+function checkID(){
+		//alert("check");
+		let action = regForm.action;
+		//alert(action);
+		$.ajax({
+			type: "get",
+			url: "http://localhost:8080/member/checkID",
+			dataType: "json",
+			data: {"userid": $("#userid").val()},
+			success: function(data){
+				if(data == 1){
+					$("#check").text("이미 가입된 ID입니다.");
+					$("#check").css({"color": "red", "padding-top": "5px"});
+				}else if(data == 0){
+					$("#idCheck").attr("value", "Y");
+					$("#check").text("사용 가능한 ID입니다.");
+					$("#check").css({"padding-top": "5px"});
+				}
+			},
+			error: function(data){
+				alert("에러 발생!!")
+			}
+			})
+		})
+	}
 </script>
 </head>
 <body>
@@ -63,30 +82,34 @@
 				<h2>회원 가입</h2>
 			</div>
 			<form action="/member/signup" method="post" 
-				  onsubmit="return checkMember()" name="newWrite">
+				  onsubmit="return checkForm()" name="regForm">
 				<table class="tbl_signup">
 					<tr>
 						<td>아이디</td>
-						<td><input type="text" name="userid" placeholder="ID"></td>
+						<td>
+						<input type="text" id="name" name="userid" placeholder="ID">
+						<input type="button" value="ID 중복" onclick="checkID()">
+						<p id="check"></p>
+						</td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><input type="password" name="userpw"
+						<td><input type="password" id="userpw" name="userpw"
 						       placeholder="PASSWORD"></td>
 					</tr>
 					<tr>
 						<td>비밀번호 확인</td>
-						<td><input type="password" name="userpw_confirm"
-						       placeholder="PASSWORD"></td>
+						<td><input type="password" id="userpw_confirm" name="userpw_confirm"
+						       placeholder="PASSWORD_CONFIRM"></td>
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td><input type="text" name="username"></td>
+						<td><input type="text" id="username" name="username"></td>
 					</tr>
 					
 					<tr>
 						<td colspan="2">
-							<input type="submit" onclick="checkMember()" value="등록">
+							<input type="submit" value="등록" >
 							<input type="reset" value="취소">
 						</td>
 					</tr>
@@ -95,5 +118,6 @@
 			</form>
 		</section>
 	</div>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

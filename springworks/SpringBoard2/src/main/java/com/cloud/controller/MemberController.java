@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cloud.domain.MemberVO;
 import com.cloud.service.MemberService;
@@ -40,7 +43,7 @@ public class MemberController {
 	
 	//회원 목록 보기
 	@GetMapping("/memberList")
-	@PreAuthorize("isAuthenticated()") //로그인 창
+	@PreAuthorize("isAuthenticated()")   //로그인 창 뜸
 	public String getMemberList(Model model) {
 		List<MemberVO> memberList = service.getMemberList();
 		model.addAttribute("memberList", memberList); //view로 모델 보냄
@@ -67,5 +70,13 @@ public class MemberController {
 	public String update(MemberVO member) {
 		service.update(member);
 		return "redirect:/member/memberList";
+	}
+	
+	//ID 중복 체크
+	@RequestMapping(value="/checkID", method=RequestMethod.POST)
+	@ResponseBody
+	public int checkID(String userid) {
+		int result = service.checkID(userid);
+		return result;
 	}
 }

@@ -24,18 +24,18 @@ public class MemberServiceImpl implements MemberService {
 	private PasswordEncoder pwencoder;
 
 	@Override
-	public void signup(MemberVO member) {  //회원 가입
-		//비밀번호 암호화
+	public void signup(MemberVO member) {  //ȸ�� ����
+		//��й�ȣ ��ȣȭ
 		String encPw = pwencoder.encode(member.getUserpw());
 		member.setUserpw(encPw);
 		
-		mapper.insertMember(member); //member 가입
+		mapper.insertMember(member); //member ����
 		
 		AuthVO auth = new AuthVO();
 		auth.setUserid(member.getUserid());
-		auth.setAuth("ROLE_USER");  //권한 변경 처리
+		auth.setAuth("ROLE_USER");  //���� ���� ó��
 		
-		authMapper.insertMemberAuth(auth); //auth 부여
+		authMapper.insertMemberAuth(auth); //auth �ο�
 	}
 
 	@Override
@@ -55,11 +55,17 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void update(MemberVO member) {
-		//비밀번호 암호화 (수정 처리)
+		//��й�ȣ ��ȣȭ (���� ó��)
 		String encPw = pwencoder.encode(member.getUserpw());
 		member.setUserpw(encPw);
 		
 		mapper.updateMember(member);
 	}
+
+	@Override
+	public int checkID(String userid) {
+		return mapper.checkID(userid);
+	}
+
 
 }

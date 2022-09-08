@@ -14,7 +14,7 @@
    <jsp:include page="../menu.jsp"/>
    <div id="container">
       <section id="list">
-         <h2 class="main">글 목록</h2>
+         <h2 class="main">유머 게시판</h2>
          <table class="tbl_list">
             <tr>
                <th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th><th>좋아요</th>

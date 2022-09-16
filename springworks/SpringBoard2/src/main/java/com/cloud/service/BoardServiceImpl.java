@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cloud.domain.BoardVO;
+import com.cloud.domain.Criteria;
 import com.cloud.mapper.BoardMapper;
 
 @Service
@@ -15,33 +16,43 @@ public class BoardServiceImpl implements BoardService{
 	private BoardMapper mapper;
 
 	@Override
-	public List<BoardVO> getBoardList() { //¸ñ·Ï º¸±â
+	public List<BoardVO> getBoardList() { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		return mapper.getBoardList();
 	}
 
 	@Override
-	public void insert(BoardVO vo) { //±Û¾²±â
+	public void insert(BoardVO vo) { //ï¿½Û¾ï¿½ï¿½ï¿½
 		mapper.insertBoard(vo);
 	}
 
 	@Override
-	public BoardVO getBoard(int bno) {  //±Û »ó¼¼ º¸±â
+	public BoardVO getBoard(int bno) {  //ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		return mapper.getBoard(bno);
 	}
 
 	@Override
-	public void delete(BoardVO vo) { //±Û »èÁ¦ ¼­ºñ½º
+	public void delete(BoardVO vo) { //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		mapper.deleteBoard(vo);
 	}
 
 	@Override
-	public void update(BoardVO vo) { //±Û ¼öÁ¤ ¼­ºñ½º
+	public void update(BoardVO vo) { //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		mapper.updateBoard(vo);
 	}
 
 	@Override
-	public void updateCount(int bno) { //Á¶È¸¼ö ¼­ºñ½º
+	public void updateCount(int bno) { //ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		mapper.updateCount(bno);
+	}
+
+	@Override
+	public List<BoardVO> getListWithPage(Criteria cri) {
+		return mapper.getListWithPage(cri);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri) {
+		return mapper.getTotalCount(cri);
 	}
 
 }

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BoardVO implements Serializable{
-	
+
 	private static final long serialVersionUID = 10L;
 	
 	private int bno;         //글번호
@@ -21,7 +21,7 @@ public class BoardVO implements Serializable{
 	private String content;  //내용
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date regDate;    //작성일
+	private Date updateDate;    //작성일
 	private int cnt;         //조회수
 	
-	private MultipartFile uploadFile;
 }

@@ -3,19 +3,24 @@ package com.cloud.mapper;
 import java.util.List;
 
 import com.cloud.domain.BoardVO;
+import com.cloud.domain.Criteria;
 
-//DAO ¿ªÇÒ
+//DAO ï¿½ï¿½ï¿½ï¿½
 public interface BoardMapper {
 	
-	public List<BoardVO> getBoardList(); //±Û ¸ñ·Ï º¸±â
+	public List<BoardVO> getListWithPage(Criteria cri); //ëª©ë¡ í˜ì´ì§€
 	
-	public void insertBoard(BoardVO vo);  //±Û¾²±â
+	public List<BoardVO> getBoardList(); //ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public BoardVO getBoard(int bno);  //±Û »ó¼¼ º¸±â
+	public int getTotalCount(Criteria cri);
 	
-	public void deleteBoard(BoardVO vo);  //±Û »èÁ¦
+	public void insertBoard(BoardVO vo);  //ï¿½Û¾ï¿½ï¿½ï¿½
 	
-	public void updateBoard(BoardVO vo);  //±Û ¼öÁ¤
+	public BoardVO getBoard(int bno);  //ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public void updateCount(int bno);  //Á¶È¸¼ö
+	public void deleteBoard(BoardVO vo);  //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
+	public void updateBoard(BoardVO vo);  //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
+	public void updateCount(int bno);  //ï¿½ï¿½È¸ï¿½ï¿½
 }

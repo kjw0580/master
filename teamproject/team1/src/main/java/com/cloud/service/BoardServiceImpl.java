@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cloud.domain.BoardVO;
-import com.cloud.mapper.*;
+import com.cloud.domain.Criteria;
+import com.cloud.mapper.BoardMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -17,7 +18,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public List<BoardVO> getBoardList() { //목록 보기
 		return mapper.getBoardList();
-	}
+	} 
 
 	@Override
 	public void insert(BoardVO vo) { //글쓰기
@@ -42,6 +43,16 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void updateCount(int bno) { //조회수 서비스
 		mapper.updateCount(bno);
+	}
+
+	@Override
+	public List<BoardVO> getListWithPage(Criteria cri) {
+		return mapper.getListWithPage(cri);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri) {
+		return mapper.getTotalCount(cri);
 	}
 
 }

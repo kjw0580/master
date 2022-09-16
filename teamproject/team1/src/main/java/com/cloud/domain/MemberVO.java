@@ -9,15 +9,15 @@ import lombok.Data;
 @Data
 public class MemberVO implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-	
-	private String userid;
-	private String userpw;
-	private String username;
-	private String enabled;
-	private Date regDate;
-	private Date updateDate;
-	private List<AuthVO> authList;
-	private String email;
-	
+   private static final long serialVersionUID = 1L;
+   
+   private String userid;
+   private String userpw;
+   private String username;
+   private String enabled;
+   private Date regdate;
+   private Date updateDate;
+   private List<AuthVO> authList;
+   private String email;
+   
 }

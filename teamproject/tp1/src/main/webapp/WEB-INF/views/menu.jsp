@@ -24,7 +24,6 @@ document.getElementById('frm').submit();
 @media (min-width: 0px) and (max-width: 1150px) {
 .NavBox li{float:left; width:100%; height:20px; margin-bottom:20px;}
 .NavBox ul{width:100%; margin:0 auto; height:100%; padding-left:0px;}
-.menutopbox{height:290px;}
 }
 </style>
 </head>
@@ -38,6 +37,11 @@ document.getElementById('frm').submit();
 <div class="collapse NavBox" id="navbarToggleExternalContent">
   <div class="bg-dark p-4 menutopbox">
   <security:authorize access="isAnonymous()">
+  <style>
+@media (min-width: 0px) and (max-width: 1150px) {
+.menutopbox{height:250px;}
+}
+</style>
       <ul>  
          <li><a href ="/">Home</a></li>
          <li><a href ="/customLogin">로그인</a></li>
@@ -60,6 +64,11 @@ document.getElementById('frm').submit();
     <h6><a href ="/member/memberList">회원목록</a></h6>
     <h6><a href="/board/boardList">재미</a></h6>
     <h6><a href="/board/boardList2">공포</a></h6> --%>
+<style>
+@media (min-width: 0px) and (max-width: 1150px) {
+.menutopbox{height:290px;}
+}
+</style>
     <ul>
          <li><a href ="/">Home</a></li>
          <li><a href ="#" onclick="chk_form()"><c:out value="${pinfo.username }" />(님)로그아웃</a></li>

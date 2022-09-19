@@ -118,7 +118,7 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
          </form>
       </section>
+      <jsp:include page="../footer.jsp" />
    </div>
-   <jsp:include page="../footer.jsp" />
 </body>
 </html>

@@ -23,11 +23,11 @@
       <div class="row">
          <div class="col-sm-6 link-dark">
             <img src="/resources/images/ghost.jpg" style="width:100%; border-radius: 25px; margin-top:30px;" alt="귀신">
-            <button type="button" onclick= "location.href ='/board/boardList2'" class="btns btn btn-danger btn-lg fa-solid fa-fade"> 입장 </button>
+            <button type="button" onclick= "location.href ='/board/boardList2'" class="btns btn-hover color-11 btn-lg fa-solid fa-fade "> 입장 </button>
          </div>
          <div class="col-sm-6">
             <img src="/resources/images/bonobono.jpg" style="width:100%; border-radius: 25px; margin-top:30px;" alt="웃음"> 
-            <button type="button" onclick= "location.href ='/board/boardList'" class="btns btn btn-info btn-lg fa-solid fa-fade"> 입장 </button>
+            <button type="button" onclick= "location.href ='/board/boardList'" class="btns btn-hover color-9 btn-lg fa-solid fa-fade "> 입장 </button>
          </div>
       </div>
    </div>
